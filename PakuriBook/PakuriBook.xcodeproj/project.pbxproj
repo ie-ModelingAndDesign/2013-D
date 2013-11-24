@@ -21,6 +21,7 @@
 		697D971A18388BCF00D20652 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697D96FC18388BCF00D20652 /* UIKit.framework */; };
 		697D972218388BCF00D20652 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 697D972018388BCF00D20652 /* InfoPlist.strings */; };
 		697D972418388BCF00D20652 /* PakuriBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D972318388BCF00D20652 /* PakuriBookTests.m */; };
+		6B10A0691841C91400653CC4 /* NewsFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A0681841C91400653CC4 /* NewsFeed.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,10 @@
 		697D971F18388BCF00D20652 /* PakuriBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PakuriBookTests-Info.plist"; sourceTree = "<group>"; };
 		697D972118388BCF00D20652 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		697D972318388BCF00D20652 /* PakuriBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PakuriBookTests.m; sourceTree = "<group>"; };
+		6B10A05E1841BA9400653CC4 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		6B10A0651841C43800653CC4 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = "../../../facebook-ios-sdk-master/src/FBDialog.h"; sourceTree = "<group>"; };
+		6B10A0661841C82500653CC4 /* NewsFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsFeed.h; path = ../NewsFeed.h; sourceTree = "<group>"; };
+		6B10A0681841C91400653CC4 /* NewsFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeed.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +117,12 @@
 		697D96FE18388BCF00D20652 /* PakuriBook */ = {
 			isa = PBXGroup;
 			children = (
+				6B10A0661841C82500653CC4 /* NewsFeed.h */,
+				6B10A0681841C91400653CC4 /* NewsFeed.m */,
 				697D970718388BCF00D20652 /* AppDelegate.h */,
 				697D970818388BCF00D20652 /* AppDelegate.m */,
+				6B10A05E1841BA9400653CC4 /* FBConnect.h */,
+				6B10A0651841C43800653CC4 /* FBDialog.h */,
 				697D970A18388BCF00D20652 /* Main.storyboard */,
 				697D970D18388BCF00D20652 /* ViewController.h */,
 				697D970E18388BCF00D20652 /* ViewController.m */,
@@ -251,6 +260,7 @@
 			files = (
 				697D970F18388BCF00D20652 /* ViewController.m in Sources */,
 				697D970918388BCF00D20652 /* AppDelegate.m in Sources */,
+				6B10A0691841C91400653CC4 /* NewsFeed.m in Sources */,
 				697D970518388BCF00D20652 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +470,7 @@
 				697D972918388BCF00D20652 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		697D972A18388BCF00D20652 /* Build configuration list for PBXNativeTarget "PakuriBookTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				697D972C18388BCF00D20652 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
