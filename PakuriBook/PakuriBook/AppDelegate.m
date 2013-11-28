@@ -10,11 +10,28 @@
 
 @implementation AppDelegate
 
+@synthesize window=_window;
+@synthesize facebook;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     return YES;
+    
+    
+    facebook = [[Facebook alloc] initWithAppId:@"YOUR_APP_ID" andDelegate:self];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"]
+        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    if (![facebook isSessionValid]) {
+        [facebook authorize:nil];
+    }
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

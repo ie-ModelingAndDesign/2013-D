@@ -9,8 +9,8 @@
 #import "NewsFeed.h"
 static NSString* appId = @"579754678757795";
 
-initWithAppId;@"579754678757795";
-facebook = [[Facebook alloc] initWithAppId:@"579754678757795"];
+initWithAppId;"579754678757795";
+facebook = [[facebook alloc] initWithAppId:579754678757795];
 
 @implementation NewsFeed
 
