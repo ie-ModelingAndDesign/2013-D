@@ -21,7 +21,7 @@
 		697D971A18388BCF00D20652 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697D96FC18388BCF00D20652 /* UIKit.framework */; };
 		697D972218388BCF00D20652 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 697D972018388BCF00D20652 /* InfoPlist.strings */; };
 		697D972418388BCF00D20652 /* PakuriBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D972318388BCF00D20652 /* PakuriBookTests.m */; };
-		69F219E51846E2990094B89C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F219E41846E2990094B89C /* FacebookSDK.framework */; };
+		69F219E71846E81D0094B89C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F219E61846E81D0094B89C /* FacebookSDK.framework */; };
 		6B10A0691841C91400653CC4 /* NewsFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B10A0681841C91400653CC4 /* NewsFeed.m */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		697D971F18388BCF00D20652 /* PakuriBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PakuriBookTests-Info.plist"; sourceTree = "<group>"; };
 		697D972118388BCF00D20652 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		697D972318388BCF00D20652 /* PakuriBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PakuriBookTests.m; sourceTree = "<group>"; };
-		69F219E41846E2990094B89C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../../facebook-ios-sdk/build/FacebookSDK.framework"; sourceTree = "<group>"; };
+		69F219E61846E81D0094B89C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		6B10A05E1841BA9400653CC4 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
 		6B10A0651841C43800653CC4 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = "../../../facebook-ios-sdk-master/src/FBDialog.h"; sourceTree = "<group>"; };
 		6B10A0661841C82500653CC4 /* NewsFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsFeed.h; path = ../NewsFeed.h; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				697D96FB18388BCF00D20652 /* CoreGraphics.framework in Frameworks */,
-				69F219E51846E2990094B89C /* FacebookSDK.framework in Frameworks */,
+				69F219E71846E81D0094B89C /* FacebookSDK.framework in Frameworks */,
 				697D96FD18388BCF00D20652 /* UIKit.framework in Frameworks */,
 				697D96F918388BCF00D20652 /* Foundation.framework in Frameworks */,
 			);
@@ -109,7 +109,7 @@
 		697D96F718388BCF00D20652 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69F219E41846E2990094B89C /* FacebookSDK.framework */,
+				69F219E61846E81D0094B89C /* FacebookSDK.framework */,
 				697D96F818388BCF00D20652 /* Foundation.framework */,
 				697D96FA18388BCF00D20652 /* CoreGraphics.framework */,
 				697D96FC18388BCF00D20652 /* UIKit.framework */,
@@ -395,6 +395,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/e125705/facebook-ios-sdk/build",
+					"/Users/e125705/modeling/2013-D/PakuriBook",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PakuriBook/PakuriBook-Prefix.pch";
@@ -412,6 +413,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/e125705/facebook-ios-sdk/build",
+					"/Users/e125705/modeling/2013-D/PakuriBook",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PakuriBook/PakuriBook-Prefix.pch";
