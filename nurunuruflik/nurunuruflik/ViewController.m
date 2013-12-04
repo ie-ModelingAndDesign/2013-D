@@ -27,6 +27,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)goBack:(UIStoryboardSegue *)segue {}
-
 @end

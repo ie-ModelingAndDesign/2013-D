@@ -21,6 +21,8 @@
 		699BE9A9184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
 		699BE9B1184B0CF400AD0741 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 699BE9AF184B0CF400AD0741 /* InfoPlist.strings */; };
 		699BE9B3184B0CF400AD0741 /* nurunuruflikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */; };
+		69C500C8184F7EDA00A4B4A1 /* setsumeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */; };
+		69C500CB184F803000A4B4A1 /* startViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C500CA184F803000A4B4A1 /* startViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,7 @@
 		699BE996184B0CF400AD0741 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		699BE997184B0CF400AD0741 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		699BE99A184B0CF400AD0741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		699BE99C184B0CF400AD0741 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		699BE99C184B0CF400AD0741 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ViewController.h; sourceTree = "<group>"; };
 		699BE99D184B0CF400AD0741 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		699BE99F184B0CF400AD0741 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		699BE9A5184B0CF400AD0741 /* nurunuruflikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nurunuruflikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,10 @@
 		699BE9AE184B0CF400AD0741 /* nurunuruflikTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nurunuruflikTests-Info.plist"; sourceTree = "<group>"; };
 		699BE9B0184B0CF400AD0741 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nurunuruflikTests.m; sourceTree = "<group>"; };
+		69C500C6184F7EDA00A4B4A1 /* setsumeiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setsumeiViewController.h; sourceTree = "<group>"; };
+		69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setsumeiViewController.m; sourceTree = "<group>"; };
+		69C500C9184F803000A4B4A1 /* startViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startViewController.h; sourceTree = "<group>"; };
+		69C500CA184F803000A4B4A1 /* startViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +121,12 @@
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
 				699BE997184B0CF400AD0741 /* AppDelegate.m */,
 				699BE999184B0CF400AD0741 /* Main.storyboard */,
+				69C500C9184F803000A4B4A1 /* startViewController.h */,
+				69C500CA184F803000A4B4A1 /* startViewController.m */,
 				699BE99C184B0CF400AD0741 /* ViewController.h */,
 				699BE99D184B0CF400AD0741 /* ViewController.m */,
+				69C500C6184F7EDA00A4B4A1 /* setsumeiViewController.h */,
+				69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */,
 				699BE99F184B0CF400AD0741 /* Images.xcassets */,
 				699BE98E184B0CF400AD0741 /* Supporting Files */,
 			);
@@ -249,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C500CB184F803000A4B4A1 /* startViewController.m in Sources */,
 				699BE99E184B0CF400AD0741 /* ViewController.m in Sources */,
+				69C500C8184F7EDA00A4B4A1 /* setsumeiViewController.m in Sources */,
 				699BE998184B0CF400AD0741 /* AppDelegate.m in Sources */,
 				699BE994184B0CF400AD0741 /* main.m in Sources */,
 			);
@@ -460,6 +472,7 @@
 				699BE9B8184B0CF400AD0741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		699BE9B9184B0CF400AD0741 /* Build configuration list for PBXNativeTarget "nurunuruflikTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +481,7 @@
 				699BE9BB184B0CF400AD0741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
