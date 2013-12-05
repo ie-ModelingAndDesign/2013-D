@@ -1,5 +1,5 @@
 //
-//  setsumeiViewController.h
+//  HowtoViewController.h
 //  nurunuruflik
 //
 //  Created by Hiroki MATSUMOTO on 2013/12/05.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface setsumeiViewController : UIViewController
+@interface HowtoViewController : UIViewController
 
 @end

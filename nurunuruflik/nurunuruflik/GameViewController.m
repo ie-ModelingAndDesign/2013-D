@@ -1,18 +1,18 @@
 //
-//  setsumeiViewController.m
+//  GameViewController.m
 //  nurunuruflik
 //
 //  Created by Hiroki MATSUMOTO on 2013/12/05.
 //  Copyright (c) 2013年 Hiroki MATSUMOTO. All rights reserved.
 //
 
-#import "setsumeiViewController.h"
+#import "GameViewController.h"
 
-@interface setsumeiViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation setsumeiViewController
+@implementation GameViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

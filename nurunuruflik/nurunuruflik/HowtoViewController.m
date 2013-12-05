@@ -1,18 +1,18 @@
 //
-//  startViewController.m
+//  HowtoViewController.m
 //  nurunuruflik
 //
 //  Created by Hiroki MATSUMOTO on 2013/12/05.
 //  Copyright (c) 2013年 Hiroki MATSUMOTO. All rights reserved.
 //
 
-#import "startViewController.h"
+#import "HowtoViewController.h"
 
-@interface startViewController ()
+@interface HowtoViewController ()
 
 @end
 
-@implementation startViewController
+@implementation HowtoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

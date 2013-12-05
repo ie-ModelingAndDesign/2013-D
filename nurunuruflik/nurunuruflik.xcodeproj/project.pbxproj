@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695C79531850187900941C47 /* HowtoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C79521850187900941C47 /* HowtoViewController.m */; };
+		695C7997185021BF00941C47 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C7996185021BF00941C47 /* GameViewController.m */; };
 		699BE988184B0CF400AD0741 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE987184B0CF400AD0741 /* Foundation.framework */; };
 		699BE98A184B0CF400AD0741 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE989184B0CF400AD0741 /* CoreGraphics.framework */; };
 		699BE98C184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
@@ -21,8 +23,6 @@
 		699BE9A9184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
 		699BE9B1184B0CF400AD0741 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 699BE9AF184B0CF400AD0741 /* InfoPlist.strings */; };
 		699BE9B3184B0CF400AD0741 /* nurunuruflikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */; };
-		69C500C8184F7EDA00A4B4A1 /* setsumeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */; };
-		69C500CB184F803000A4B4A1 /* startViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C500CA184F803000A4B4A1 /* startViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		695C79511850187900941C47 /* HowtoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowtoViewController.h; sourceTree = "<group>"; };
+		695C79521850187900941C47 /* HowtoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowtoViewController.m; sourceTree = "<group>"; };
+		695C7995185021BF00941C47 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		695C7996185021BF00941C47 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		699BE984184B0CF400AD0741 /* nurunuruflik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nurunuruflik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699BE987184B0CF400AD0741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699BE989184B0CF400AD0741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,10 +59,6 @@
 		699BE9AE184B0CF400AD0741 /* nurunuruflikTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nurunuruflikTests-Info.plist"; sourceTree = "<group>"; };
 		699BE9B0184B0CF400AD0741 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nurunuruflikTests.m; sourceTree = "<group>"; };
-		69C500C6184F7EDA00A4B4A1 /* setsumeiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setsumeiViewController.h; sourceTree = "<group>"; };
-		69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setsumeiViewController.m; sourceTree = "<group>"; };
-		69C500C9184F803000A4B4A1 /* startViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startViewController.h; sourceTree = "<group>"; };
-		69C500CA184F803000A4B4A1 /* startViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,14 +119,14 @@
 			isa = PBXGroup;
 			children = (
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
+				695C79511850187900941C47 /* HowtoViewController.h */,
+				695C79521850187900941C47 /* HowtoViewController.m */,
+				695C7995185021BF00941C47 /* GameViewController.h */,
+				695C7996185021BF00941C47 /* GameViewController.m */,
 				699BE997184B0CF400AD0741 /* AppDelegate.m */,
 				699BE999184B0CF400AD0741 /* Main.storyboard */,
-				69C500C9184F803000A4B4A1 /* startViewController.h */,
-				69C500CA184F803000A4B4A1 /* startViewController.m */,
 				699BE99C184B0CF400AD0741 /* ViewController.h */,
 				699BE99D184B0CF400AD0741 /* ViewController.m */,
-				69C500C6184F7EDA00A4B4A1 /* setsumeiViewController.h */,
-				69C500C7184F7EDA00A4B4A1 /* setsumeiViewController.m */,
 				699BE99F184B0CF400AD0741 /* Images.xcassets */,
 				699BE98E184B0CF400AD0741 /* Supporting Files */,
 			);
@@ -259,11 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C500CB184F803000A4B4A1 /* startViewController.m in Sources */,
+				695C7997185021BF00941C47 /* GameViewController.m in Sources */,
 				699BE99E184B0CF400AD0741 /* ViewController.m in Sources */,
-				69C500C8184F7EDA00A4B4A1 /* setsumeiViewController.m in Sources */,
 				699BE998184B0CF400AD0741 /* AppDelegate.m in Sources */,
 				699BE994184B0CF400AD0741 /* main.m in Sources */,
+				695C79531850187900941C47 /* HowtoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
