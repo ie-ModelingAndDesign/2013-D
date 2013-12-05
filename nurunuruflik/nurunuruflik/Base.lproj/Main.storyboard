@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="343" y="65"/>
         </scene>
-        <!--Start View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="anr-yP-ane">
             <objects>
-                <viewController id="jNJ-Jo-gPy" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController id="jNJ-Jo-gPy" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KLW-nc-gxE"/>
                         <viewControllerLayoutGuide type="bottom" id="GVS-gz-rPk"/>
@@ -72,7 +72,11 @@
                                 <rect key="frame" x="53" y="205" width="215" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEnd" id="ZZ1-3X-9vg"/>
+                                    <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="hWU-qV-cGA"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="文字列1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R02-JN-Nrg">
                                 <rect key="frame" x="26" y="125" width="268" height="72"/>
@@ -98,10 +102,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y4Z-aI-xzl"/>
                     <connections>
-                        <outlet property="example" destination="R02-JN-Nrg" id="6ja-N8-OhE"/>
-                        <outlet property="input" destination="iBo-KJ-arr" id="mYx-pf-rbU"/>
-                        <outlet property="result" destination="xLl-Yw-572" id="s0P-kb-GFn"/>
-                        <outlet property="time" destination="SYU-X2-X7m" id="nIQ-al-PNa"/>
+                        <outlet property="Example" destination="R02-JN-Nrg" id="fZU-ZS-w3O"/>
+                        <outlet property="Input" destination="iBo-KJ-arr" id="Jvi-cX-YN4"/>
+                        <outlet property="Result" destination="xLl-Yw-572" id="wkK-oa-JCm"/>
+                        <outlet property="Time" destination="SYU-X2-X7m" id="UQ1-Sh-IJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +177,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4vN-Ml-d8s"/>
+        <segue reference="W7R-ZO-gfm"/>
     </inferredMetricsTieBreakers>
 </document>
