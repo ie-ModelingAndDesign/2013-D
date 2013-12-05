@@ -75,7 +75,8 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEnd" id="ZZ1-3X-9vg"/>
-                                    <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="hWU-qV-cGA"/>
+                                    <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEndOnExit" id="wxZ-na-QKF"/>
+                                    <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="eoN-cO-BYL"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="文字列1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R02-JN-Nrg">

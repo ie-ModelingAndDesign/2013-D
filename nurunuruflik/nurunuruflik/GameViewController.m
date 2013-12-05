@@ -23,6 +23,7 @@ BOOL timeflg=FALSE;
 
 NSTimer *timer;
 
+
 - (void)onTimer:(NSTimer*)timer {
     if(timeflg){
         NSDate *now = [NSDate date];
@@ -65,7 +66,8 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
--(IBAction)Exit:(id)sender {
+
+- (IBAction)Exit:(id)sender {
     NSString *strExample = self.Example.text;
     NSString *strInput = self.Input.text;
     if ([strExample isEqualToString:strInput]) {
@@ -79,10 +81,10 @@ NSTimer *timer;
         self.Result.hidden = NO;
         self.Result.text = @"ミス！";
     }
+    
 }
 
-
--(IBAction)Start:(id)sender {
+- (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
     if (!timeflg){
         start_date = [NSDate date];
@@ -90,7 +92,9 @@ NSTimer *timer;
     }
     
     self.Example.text = @"aaa";
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {
