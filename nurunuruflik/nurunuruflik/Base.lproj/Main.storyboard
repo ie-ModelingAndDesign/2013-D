@@ -43,6 +43,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="start:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="X70-l5-98x"/>
                                     <segue destination="jNJ-Jo-gPy" kind="push" id="W7R-ZO-gfm"/>
                                 </connections>
                             </button>
@@ -58,7 +59,7 @@
         <!--Start View Controller-->
         <scene sceneID="anr-yP-ane">
             <objects>
-                <viewController id="jNJ-Jo-gPy" customClass="startViewController" sceneMemberID="viewController">
+                <viewController id="jNJ-Jo-gPy" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KLW-nc-gxE"/>
                         <viewControllerLayoutGuide type="bottom" id="GVS-gz-rPk"/>
@@ -81,24 +82,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="文字列2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLl-Yw-572">
-                                <rect key="frame" x="83" y="76" width="155" height="41"/>
+                                <rect key="frame" x="152" y="71" width="155" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-X2-X7m">
+                                <rect key="frame" x="15" y="81" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y4Z-aI-xzl"/>
+                    <connections>
+                        <outlet property="example" destination="R02-JN-Nrg" id="6ja-N8-OhE"/>
+                        <outlet property="input" destination="iBo-KJ-arr" id="mYx-pf-rbU"/>
+                        <outlet property="result" destination="xLl-Yw-572" id="s0P-kb-GFn"/>
+                        <outlet property="time" destination="SYU-X2-X7m" id="nIQ-al-PNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="-396"/>
         </scene>
-        <!--Setsumei View Controller-->
+        <!--Howto View Controller-->
         <scene sceneID="YZi-Qe-abN">
             <objects>
-                <viewController id="oug-IN-aHT" customClass="setsumeiViewController" sceneMemberID="viewController">
+                <viewController id="oug-IN-aHT" customClass="HowtoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3K-tR-LPn"/>
                         <viewControllerLayoutGuide type="bottom" id="8ZQ-Mi-YSf"/>
@@ -117,7 +130,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="modal" id="RkA-fm-ioU"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="4vN-Ml-d8s"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u71-QS-CgE">
@@ -135,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjG-zw-Coh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="302"/>
+            <point key="canvasLocation" x="898" y="221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rrt-Sy-Soi">
@@ -160,6 +173,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RkA-fm-ioU"/>
+        <segue reference="4vN-Ml-d8s"/>
     </inferredMetricsTieBreakers>
 </document>
