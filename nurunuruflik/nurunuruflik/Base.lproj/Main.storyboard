@@ -72,7 +72,7 @@
                                 <rect key="frame" x="53" y="205" width="215" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEnd" id="ZZ1-3X-9vg"/>
                                     <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="hWU-qV-cGA"/>
@@ -91,10 +91,11 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-X2-X7m">
-                                <rect key="frame" x="15" y="81" width="94" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-K8-nok">
+                                <rect key="frame" x="26" y="81" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -103,9 +104,9 @@
                     <navigationItem key="navigationItem" id="Y4Z-aI-xzl"/>
                     <connections>
                         <outlet property="Example" destination="R02-JN-Nrg" id="fZU-ZS-w3O"/>
+                        <outlet property="GTime" destination="uhh-K8-nok" id="fM4-ZH-oEX"/>
                         <outlet property="Input" destination="iBo-KJ-arr" id="Jvi-cX-YN4"/>
                         <outlet property="Result" destination="xLl-Yw-572" id="wkK-oa-JCm"/>
-                        <outlet property="Time" destination="SYU-X2-X7m" id="UQ1-Sh-IJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

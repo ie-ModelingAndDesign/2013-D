@@ -13,7 +13,7 @@
 @end
 
 @implementation GameViewController
-@synthesize Time;
+@synthesize GTime;
 @synthesize Result;
 @synthesize Example;
 @synthesize Input;
@@ -26,7 +26,7 @@ NSTimer *timer;
 - (void)onTimer:(NSTimer*)timer {
     if(timeflg){
         NSDate *now = [NSDate date];
-        self.Time.text = [NSString stringWithFormat:@"%.2f",
+        self.GTime.text = [NSString stringWithFormat:@"%.2f",
                               [now timeIntervalSinceDate:start_date]];
     }
 }
@@ -44,7 +44,7 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.Time.text = @"0.00";
+    self.GTime.text = @"0.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:(0.01)
@@ -54,7 +54,7 @@ NSTimer *timer;
 
 -(void)viewDidUnload{
     [self setExample:nil];
-    [self setTime:nil];
+    [self setGTime:nil];
     [self setInput:nil];
     [self setResult:nil];
     [super viewDidUnload];
