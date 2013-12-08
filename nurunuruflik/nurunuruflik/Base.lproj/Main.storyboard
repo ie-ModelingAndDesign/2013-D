@@ -74,7 +74,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEnd" id="ZZ1-3X-9vg"/>
                                     <action selector="Exit:" destination="jNJ-Jo-gPy" eventType="editingDidEndOnExit" id="wxZ-na-QKF"/>
                                     <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="eoN-cO-BYL"/>
                                 </connections>
