@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		695C79531850187900941C47 /* HowtoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C79521850187900941C47 /* HowtoViewController.m */; };
 		695C7997185021BF00941C47 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C7996185021BF00941C47 /* GameViewController.m */; };
+		696C40A618542E5B0018005B /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696C40A518542E5B0018005B /* DifficultyViewController.m */; };
 		699BE988184B0CF400AD0741 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE987184B0CF400AD0741 /* Foundation.framework */; };
 		699BE98A184B0CF400AD0741 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE989184B0CF400AD0741 /* CoreGraphics.framework */; };
 		699BE98C184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 		695C79521850187900941C47 /* HowtoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowtoViewController.m; sourceTree = "<group>"; };
 		695C7995185021BF00941C47 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		695C7996185021BF00941C47 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		696C40A418542E5B0018005B /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
+		696C40A518542E5B0018005B /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
 		699BE984184B0CF400AD0741 /* nurunuruflik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nurunuruflik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699BE987184B0CF400AD0741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699BE989184B0CF400AD0741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
+				696C40A418542E5B0018005B /* DifficultyViewController.h */,
+				696C40A518542E5B0018005B /* DifficultyViewController.m */,
 				695C79511850187900941C47 /* HowtoViewController.h */,
 				695C79521850187900941C47 /* HowtoViewController.m */,
 				695C7995185021BF00941C47 /* GameViewController.h */,
@@ -264,6 +269,7 @@
 				699BE998184B0CF400AD0741 /* AppDelegate.m in Sources */,
 				699BE994184B0CF400AD0741 /* main.m in Sources */,
 				695C79531850187900941C47 /* HowtoViewController.m in Sources */,
+				696C40A618542E5B0018005B /* DifficultyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,17 +44,87 @@
                                 </state>
                                 <connections>
                                     <action selector="start:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="X70-l5-98x"/>
-                                    <segue destination="jNJ-Jo-gPy" kind="push" id="W7R-ZO-gfm"/>
+                                    <segue destination="Xxg-FJ-nB6" kind="push" id="H2i-yW-T6Z"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="HB0-r3-exn"/>
+                    <connections>
+                        <outlet property="Start" destination="4uo-fC-FNs" id="bfa-Qj-Gb1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="343" y="65"/>
+        </scene>
+        <!--Difficulty View Controller-->
+        <scene sceneID="vqc-i3-gjD">
+            <objects>
+                <viewController id="Xxg-FJ-nB6" customClass="DifficultyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JMF-bH-Hqp"/>
+                        <viewControllerLayoutGuide type="bottom" id="VuJ-l2-A2x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iEj-E6-mPx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="難易度を選んでね!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-rV-FRE">
+                                <rect key="frame" x="26" y="79" width="268" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-5x-1rC">
+                                <rect key="frame" x="114" y="200" width="93" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Easy">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="wLp-dc-l68"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-zK-cbs">
+                                <rect key="frame" x="110" y="278" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Normal">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="8nl-Fg-tix"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-CM-h8k">
+                                <rect key="frame" x="119" y="343" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="wBZ-jx-YuS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QHf-ws-lKK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fA2-q3-utg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="-322"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="anr-yP-ane">
@@ -111,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="-396"/>
+            <point key="canvasLocation" x="1424" y="-322"/>
         </scene>
         <!--Howto View Controller-->
         <scene sceneID="YZi-Qe-abN">
@@ -135,7 +205,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="push" id="4vN-Ml-d8s"/>
+                                    <segue destination="Xxg-FJ-nB6" kind="push" id="N79-D5-GTO"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u71-QS-CgE">
@@ -153,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjG-zw-Coh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="221"/>
+            <point key="canvasLocation" x="898" y="441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rrt-Sy-Soi">
@@ -178,6 +248,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="W7R-ZO-gfm"/>
+        <segue reference="N79-D5-GTO"/>
+        <segue reference="wLp-dc-l68"/>
     </inferredMetricsTieBreakers>
 </document>

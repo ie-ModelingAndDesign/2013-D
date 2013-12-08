@@ -14,7 +14,7 @@
 @end
 
 @implementation ViewController
-
+@synthesize Start;
 
 
 - (void)viewDidLoad
@@ -28,4 +28,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)start:(id)sender{
+    
+}
+
 @end

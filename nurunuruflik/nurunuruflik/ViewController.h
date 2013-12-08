@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *Start;
 
 - (IBAction)start:(id)sender;
 
