@@ -34,6 +34,7 @@ NSTimer *timer;
         self.GTime.text = @"0.00";
         self.Result.hidden = NO;
         self.Result.text = @"タイムアップ";
+        Input.enabled = NO;
     }
 }
 
