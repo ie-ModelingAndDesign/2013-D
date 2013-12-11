@@ -18,17 +18,20 @@
 @synthesize Example;
 @synthesize Input;
 
-NSDate *start_date;
+float start_date = 60.00;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
 
 
 - (void)onTimer:(NSTimer*)timer {
-    if(timeflg){
-        NSDate *now = [NSDate date];
-        self.GTime.text = [NSString stringWithFormat:@"%.2f",
-                              [now timeIntervalSinceDate:start_date]];
+    if(timeflg == TRUE){
+        start_date -=0.01;
+       // NSDate *now = [NSDate date];
+        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date/*[now timeIntervalSinceDate:start_date]*/];
+    }else if(start_date == 0){
+        [timer invalidate];
+        self.Example.text = @"タイムアップ";
     }
 }
 
@@ -45,12 +48,10 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.GTime.text = @"0.00";
+    self.GTime.text = @"60.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
-    timer = [NSTimer scheduledTimerWithTimeInterval:(0.01)
-                                             target:self selector:@selector(onTimer:)
-                                           userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 }
 
 -(void)viewDidUnload{
@@ -86,8 +87,8 @@ NSTimer *timer;
 
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
-    if (!timeflg){
-        start_date = [NSDate date];
+    if (timeflg == FALSE){
+        //start_date = [NSDate date];
         timeflg = TRUE;
     }
     
