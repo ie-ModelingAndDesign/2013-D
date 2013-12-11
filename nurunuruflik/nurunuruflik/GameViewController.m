@@ -18,20 +18,22 @@
 @synthesize Example;
 @synthesize Input;
 
-float start_date = 60.00;
+float start_date = 10.00;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
 
 
 - (void)onTimer:(NSTimer*)timer {
-    if(timeflg == TRUE){
-        start_date -=0.01;
-       // NSDate *now = [NSDate date];
-        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date/*[now timeIntervalSinceDate:start_date]*/];
-    }else if(start_date == 0){
+    if(timeflg == TRUE && start_date > 0.00){
+        start_date -= 0.01;
+        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
+    }else if(start_date < 0.00){
+        timeflg = FALSE;
         [timer invalidate];
-        self.Example.text = @"タイムアップ";
+        self.GTime.text = @"0.00";
+        self.Result.hidden = NO;
+        self.Result.text = @"タイムアップ";
     }
 }
 
@@ -48,7 +50,7 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.GTime.text = @"60.00";
+    self.GTime.text = @"10.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
@@ -76,7 +78,7 @@ NSTimer *timer;
         timeflg = FALSE;
         self.Result.hidden = NO;
         self.Result.text = @"正解！";
-    } else {
+    }else {
         // 入力ミス
         //　タイマーを止めない。
         self.Result.hidden = NO;
@@ -88,7 +90,6 @@ NSTimer *timer;
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
     if (timeflg == FALSE){
-        //start_date = [NSDate date];
         timeflg = TRUE;
     }
     
