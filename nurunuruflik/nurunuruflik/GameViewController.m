@@ -32,9 +32,13 @@ NSTimer *timer;
         timeflg = FALSE;
         [timer invalidate];
         self.GTime.text = @"0.00";
+        start_date = 0.00;
         self.Result.hidden = NO;
         self.Result.text = @"タイムアップ";
         Input.enabled = NO;
+    }else if(start_date == 0.00){
+        timer = nil;
+        start_date = 10.00;
     }
 }
 
