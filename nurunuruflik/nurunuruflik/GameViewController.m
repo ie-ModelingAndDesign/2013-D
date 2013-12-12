@@ -39,6 +39,10 @@ NSTimer *timer;
     }else if(start_date == 0.00){
         timer = nil;
         start_date = 10.00;
+    }else if(start_date <= 10.00 && start_date > 0.00){
+        timer = nil;
+        start_date = 10.00;
+        self.Input.text = NULL;
     }
 }
 
