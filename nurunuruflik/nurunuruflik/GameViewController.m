@@ -55,6 +55,7 @@ NSTimer *timer;
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    [self.Input becomeFirstResponder];
 }
 
 -(void)viewDidUnload{
