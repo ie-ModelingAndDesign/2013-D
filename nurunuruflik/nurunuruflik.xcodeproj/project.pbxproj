@@ -24,6 +24,7 @@
 		699BE9A9184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
 		699BE9B1184B0CF400AD0741 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 699BE9AF184B0CF400AD0741 /* InfoPlist.strings */; };
 		699BE9B3184B0CF400AD0741 /* nurunuruflikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */; };
+		6B1F8FBD185CCDE9000D2A4E /* sections.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F8FBC185CCDE9000D2A4E /* sections.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		699BE9AE184B0CF400AD0741 /* nurunuruflikTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nurunuruflikTests-Info.plist"; sourceTree = "<group>"; };
 		699BE9B0184B0CF400AD0741 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		699BE9B2184B0CF400AD0741 /* nurunuruflikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nurunuruflikTests.m; sourceTree = "<group>"; };
+		6B1F8FBC185CCDE9000D2A4E /* sections.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
 				699BE997184B0CF400AD0741 /* AppDelegate.m */,
 				696C40A418542E5B0018005B /* DifficultyViewController.h */,
+				6B1F8FBC185CCDE9000D2A4E /* sections.csv */,
 				696C40A518542E5B0018005B /* DifficultyViewController.m */,
 				695C79511850187900941C47 /* HowtoViewController.h */,
 				695C79521850187900941C47 /* HowtoViewController.m */,
@@ -245,6 +248,7 @@
 			files = (
 				699BE9A0184B0CF400AD0741 /* Images.xcassets in Resources */,
 				699BE992184B0CF400AD0741 /* InfoPlist.strings in Resources */,
+				6B1F8FBD185CCDE9000D2A4E /* sections.csv in Resources */,
 				699BE99B184B0CF400AD0741 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nurunuruflik/nurunuruflik-Prefix.pch";
 				INFOPLIST_FILE = "nurunuruflik/nurunuruflik-Info.plist";
@@ -409,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nurunuruflik/nurunuruflik-Prefix.pch";
 				INFOPLIST_FILE = "nurunuruflik/nurunuruflik-Info.plist";

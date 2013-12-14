@@ -88,6 +88,7 @@ NSTimer *timer;
         timeflg = FALSE;
         self.Result.hidden = NO;
         self.Result.text = @"正解！";
+        
     }else {
         // 入力ミス
         //　タイマーを止めない。
@@ -103,10 +104,35 @@ NSTimer *timer;
         timeflg = TRUE;
     }
     
-    self.Example.text = @"aaa";
+    
+    
+    // CSVファイルからセクションデータを取得する
+    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
+    NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
+    NSScanner *scanner = [NSScanner scannerWithString:csv];
+    
+    // 改行文字の集合を取得
+    NSCharacterSet *chSet = [NSCharacterSet newlineCharacterSet];
+    // 一行ずつの読み込み
+    NSString *line;
+//    NSMutableArray *sections = [[NSMutableArray alloc] init];
+    while (![scanner isAtEnd]) {
+        // 一行読み込み
+        [scanner scanUpToCharactersFromSet:chSet intoString:&line];
+        NSLog(@"line = %@", line);
+        // カンマ「,」で区切る
+//        NSArray *array = [line componentsSeparatedByString:@","];
+        // 配列に挿入する
+//        [sections addObject:array];
+        //　改行文字をスキップ
+        [scanner scanCharactersFromSet:chSet intoString:NULL];
+    }
+    
+    self.Example.text = (@"%@",line);
 
 }
-
+    
 
 - (void)didReceiveMemoryWarning
 {
