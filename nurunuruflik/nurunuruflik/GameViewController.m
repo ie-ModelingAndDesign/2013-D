@@ -18,7 +18,7 @@
 @synthesize Example;
 @synthesize Input;
 
-float start_date = 10.00;
+float start_date = 60.00;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
@@ -38,10 +38,10 @@ NSTimer *timer;
         Input.enabled = NO;
     }else if(start_date == 0.00){
         timer = nil;
-        start_date = 10.00;
-    }else if(start_date <= 10.00 && start_date > 0.00){
+        start_date = 60.00;
+    }else if(start_date <= 60.00 && start_date > 0.00){
         timer = nil;
-        start_date = 10.00;
+        start_date = 60.00;
         self.Input.text = NULL;
     }
 }
@@ -59,7 +59,7 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.GTime.text = @"10.00";
+    self.GTime.text = @"60.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
