@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4821ABEE1862477300AF83A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABEC1862477300AF83A1 /* Default-568h@2x.png */; };
+		4821ABEF1862477300AF83A1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABED1862477300AF83A1 /* Default@2x.png */; };
+		4821ABF11862480000AF83A1 /* todouhuken.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABF01862480000AF83A1 /* todouhuken.csv */; };
 		488EDC051858F3520069710A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488EDC041858F3520069710A /* Foundation.framework */; };
 		488EDC071858F3520069710A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488EDC061858F3520069710A /* CoreGraphics.framework */; };
 		488EDC091858F3520069710A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488EDC081858F3520069710A /* UIKit.framework */; };
@@ -26,7 +29,6 @@
 		488EDC43185914330069710A /* Icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC3F185914330069710A /* Icon-512.png */; };
 		488EDC44185914330069710A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC40185914330069710A /* Icon@2x.png */; };
 		48BE9327185CF62800CEC78D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9325185CF62800CEC78D /* ViewController.m */; };
-		48BE9328185CF62800CEC78D /* StartViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48BE9326185CF62800CEC78D /* StartViewViewController.xib */; };
 		48E82801186011E50047155E /* japan.csv in Resources */ = {isa = PBXBuildFile; fileRef = 48E82800186011E40047155E /* japan.csv */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4821ABEC1862477300AF83A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4821ABED1862477300AF83A1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4821ABF01862480000AF83A1 /* todouhuken.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todouhuken.csv; sourceTree = "<group>"; };
 		488EDC011858F3520069710A /* myFlick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFlick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488EDC041858F3520069710A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		488EDC061858F3520069710A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,7 +71,6 @@
 		488EDC40185914330069710A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		48BE9324185CF62800CEC78D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		48BE9325185CF62800CEC78D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		48BE9326185CF62800CEC78D /* StartViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewViewController.xib; sourceTree = "<group>"; };
 		48E82800186011E40047155E /* japan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = japan.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				48E82800186011E40047155E /* japan.csv */,
+				4821ABF01862480000AF83A1 /* todouhuken.csv */,
 				488EDC131858F3520069710A /* AppDelegate.h */,
 				488EDC141858F3520069710A /* AppDelegate.m */,
 				488EDC161858F3520069710A /* Main.storyboard */,
@@ -149,7 +154,6 @@
 				488EDC101858F3520069710A /* main.m */,
 				488EDC121858F3520069710A /* myFlick-Prefix.pch */,
 				488EDC0D1858F3520069710A /* InfoPlist.strings */,
-				48BE9326185CF62800CEC78D /* StartViewViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -179,6 +183,8 @@
 				488EDC3E185914330069710A /* Icon-60@2x.png */,
 				488EDC3F185914330069710A /* Icon-512.png */,
 				488EDC40185914330069710A /* Icon@2x.png */,
+				4821ABEC1862477300AF83A1 /* Default-568h@2x.png */,
+				4821ABED1862477300AF83A1 /* Default@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -261,11 +267,13 @@
 			files = (
 				488EDC41185914330069710A /* Icon-29@2x.png in Resources */,
 				488EDC43185914330069710A /* Icon-512.png in Resources */,
+				4821ABEF1862477300AF83A1 /* Default@2x.png in Resources */,
+				4821ABEE1862477300AF83A1 /* Default-568h@2x.png in Resources */,
 				488EDC44185914330069710A /* Icon@2x.png in Resources */,
 				488EDC42185914330069710A /* Icon-60@2x.png in Resources */,
 				48E82801186011E50047155E /* japan.csv in Resources */,
-				48BE9328185CF62800CEC78D /* StartViewViewController.xib in Resources */,
 				488EDC1D1858F3520069710A /* Images.xcassets in Resources */,
+				4821ABF11862480000AF83A1 /* todouhuken.csv in Resources */,
 				488EDC0F1858F3520069710A /* InfoPlist.strings in Resources */,
 				488EDC181858F3520069710A /* Main.storyboard in Resources */,
 			);
