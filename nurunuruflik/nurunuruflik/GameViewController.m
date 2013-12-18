@@ -9,6 +9,17 @@
 #import "GameViewController.h"
 
 @interface GameViewController ()
+{
+    // インスタンス変数宣言
+    // sections .. csvFileから1行ずつ読み込んで配列にする.
+    NSMutableArray *sections;
+    // counter .. sectionsの添字として使う.
+    NSInteger counter;
+}
+// 文字が入力されると実行するメソッド
+- (IBAction)checkCompare:(id)sender;
+// csvファイルを読み込んで, クイズリストを作るメソッド.
+- (void)fileLoadAndMakeQuizList;
 
 @end
 
@@ -63,7 +74,53 @@ NSTimer *timer;
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    
+    // クイズリストを作成して, 1問目を表示します.
+    [self fileLoadAndMakeQuizList];
+    
+    // counterを1で初期化します.
+    counter = 1;
+    
+    //キーボードをデフォルト表示します.
     [self.Input becomeFirstResponder];
+}
+
+// csvファイルを読み込んで, クイズリストを作るメソッド
+- (void)fileLoadAndMakeQuizList
+{
+    // CSVファイルからセクションデータを取得する
+    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
+    NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
+    NSScanner *scanner = [NSScanner scannerWithString:csv];
+    
+    NSCharacterSet *chSet = [NSCharacterSet newlineCharacterSet]; // chSet .. 改行文字の集合
+    NSString *line; // line .. 1行ずつ読み込む
+    sections = [[NSMutableArray alloc] init];
+    
+    // titleUse .. タイトル行読み飛ばしフラグ.
+    // true .. 読み込む / false .. 飛ばす
+    BOOL titleUse = true;
+    // csvFileを最後まで読み込み, sectionsを完成させます.
+    while (![scanner isAtEnd]) {
+        // 1行読み込む
+        [scanner scanUpToCharactersFromSet:chSet intoString:&line];
+        if (titleUse) {
+            // 配列に挿入します
+            [sections addObject:line];
+        }
+        // 改行文字をスキップ
+        [scanner scanCharactersFromSet:chSet intoString:NULL];
+        titleUse = true;
+    }
+    // (titleUseがtrueのとき)sections[0] ~ sections[(csvFileの行数)-1]が完成しました.
+    // Fisher-Yatesアルゴリズムを使ってsectionsの並び替えを行い, クイズリストを作ります.
+    for (NSInteger i = sections.count-1; i >= 0; i--){
+        NSInteger j = arc4random() % (i+1);
+        [sections exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+    // 1問目を表示します
+    self.Example.text = sections[0];
 }
 
 -(void)viewDidUnload{
@@ -79,7 +136,6 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-
 - (IBAction)Exit:(id)sender {
     NSString *strExample = self.Example.text;
     NSString *strInput = self.Input.text;
@@ -88,14 +144,12 @@ NSTimer *timer;
         timeflg = FALSE;
         self.Result.hidden = NO;
         self.Result.text = @"正解！";
-        
     }else {
         // 入力ミス
         //　タイマーを止めない。
         self.Result.hidden = NO;
         self.Result.text = @"ミス！";
     }
-    
 }
 
 - (IBAction)Start:(id)sender {
@@ -103,42 +157,24 @@ NSTimer *timer;
     if (timeflg == FALSE){
         timeflg = TRUE;
     }
-    
-    
-    
-    // CSVファイルからセクションデータを取得する
-    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
-    NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
-    NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
-    NSScanner *scanner = [NSScanner scannerWithString:csv];
-    
-    // 改行文字の集合を取得
-    NSCharacterSet *chSet = [NSCharacterSet newlineCharacterSet];
-    // 一行ずつの読み込み
-    NSString *line;
-//    NSMutableArray *sections = [[NSMutableArray alloc] init];
-    while (![scanner isAtEnd]) {
-        // 一行読み込み
-        [scanner scanUpToCharactersFromSet:chSet intoString:&line];
-        NSLog(@"line = %@", line);
-        // カンマ「,」で区切る
-//        NSArray *array = [line componentsSeparatedByString:@","];
-        // 配列に挿入する
-//        [sections addObject:array];
-        //　改行文字をスキップ
-        [scanner scanCharactersFromSet:chSet intoString:NULL];
-    }
-    
-    self.Example.text = (@"%@",line);
-
 }
-    
+
+// 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
+- (IBAction)checkCompare:(id)sender{
+    if ([self.Example.text isEqualToString:self.Input.text]) {
+        if (counter >= sections.count) {
+            self.Input.enabled = NO;
+        } else {
+            self.Example.text = sections[counter]; // counterは1からです.
+            counter++;
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
