@@ -43,8 +43,8 @@
     //キーボードをデフォルト表示します.
     [_inputText becomeFirstResponder];
     
-    // counterを0で初期化します.
-    counter = 0;
+    // counterを1で初期化します.
+    counter = 1;
 }
 
 // csvファイルを読み込んで, クイズリストを作るメソッド
