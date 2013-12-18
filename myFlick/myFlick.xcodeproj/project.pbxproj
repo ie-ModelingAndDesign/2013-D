@@ -14,7 +14,7 @@
 		488EDC111858F3520069710A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EDC101858F3520069710A /* main.m */; };
 		488EDC151858F3520069710A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EDC141858F3520069710A /* AppDelegate.m */; };
 		488EDC181858F3520069710A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC161858F3520069710A /* Main.storyboard */; };
-		488EDC1B1858F3520069710A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EDC1A1858F3520069710A /* ViewController.m */; };
+		488EDC1B1858F3520069710A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EDC1A1858F3520069710A /* GameViewController.m */; };
 		488EDC1D1858F3520069710A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC1C1858F3520069710A /* Images.xcassets */; };
 		488EDC241858F3520069710A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488EDC231858F3520069710A /* XCTest.framework */; };
 		488EDC251858F3520069710A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488EDC041858F3520069710A /* Foundation.framework */; };
@@ -25,6 +25,9 @@
 		488EDC42185914330069710A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC3E185914330069710A /* Icon-60@2x.png */; };
 		488EDC43185914330069710A /* Icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC3F185914330069710A /* Icon-512.png */; };
 		488EDC44185914330069710A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 488EDC40185914330069710A /* Icon@2x.png */; };
+		48BE9327185CF62800CEC78D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9325185CF62800CEC78D /* ViewController.m */; };
+		48BE9328185CF62800CEC78D /* StartViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48BE9326185CF62800CEC78D /* StartViewViewController.xib */; };
+		48E82801186011E50047155E /* japan.csv in Resources */ = {isa = PBXBuildFile; fileRef = 48E82800186011E40047155E /* japan.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +52,8 @@
 		488EDC131858F3520069710A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		488EDC141858F3520069710A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		488EDC171858F3520069710A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		488EDC191858F3520069710A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		488EDC1A1858F3520069710A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		488EDC191858F3520069710A /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		488EDC1A1858F3520069710A /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		488EDC1C1858F3520069710A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		488EDC221858F3520069710A /* myFlickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myFlickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488EDC231858F3520069710A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +64,10 @@
 		488EDC3E185914330069710A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		488EDC3F185914330069710A /* Icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-512.png"; sourceTree = "<group>"; };
 		488EDC40185914330069710A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		48BE9324185CF62800CEC78D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		48BE9325185CF62800CEC78D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		48BE9326185CF62800CEC78D /* StartViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewViewController.xib; sourceTree = "<group>"; };
+		48E82800186011E40047155E /* japan.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = japan.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +127,14 @@
 		488EDC0A1858F3520069710A /* myFlick */ = {
 			isa = PBXGroup;
 			children = (
+				48E82800186011E40047155E /* japan.csv */,
 				488EDC131858F3520069710A /* AppDelegate.h */,
 				488EDC141858F3520069710A /* AppDelegate.m */,
 				488EDC161858F3520069710A /* Main.storyboard */,
-				488EDC191858F3520069710A /* ViewController.h */,
-				488EDC1A1858F3520069710A /* ViewController.m */,
+				488EDC191858F3520069710A /* GameViewController.h */,
+				488EDC1A1858F3520069710A /* GameViewController.m */,
+				48BE9324185CF62800CEC78D /* ViewController.h */,
+				48BE9325185CF62800CEC78D /* ViewController.m */,
 				488EDC1C1858F3520069710A /* Images.xcassets */,
 				488EDC451859144A0069710A /* Images */,
 				488EDC0B1858F3520069710A /* Supporting Files */,
@@ -136,9 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				488EDC0C1858F3520069710A /* myFlick-Info.plist */,
-				488EDC0D1858F3520069710A /* InfoPlist.strings */,
 				488EDC101858F3520069710A /* main.m */,
 				488EDC121858F3520069710A /* myFlick-Prefix.pch */,
+				488EDC0D1858F3520069710A /* InfoPlist.strings */,
+				48BE9326185CF62800CEC78D /* StartViewViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +263,8 @@
 				488EDC43185914330069710A /* Icon-512.png in Resources */,
 				488EDC44185914330069710A /* Icon@2x.png in Resources */,
 				488EDC42185914330069710A /* Icon-60@2x.png in Resources */,
+				48E82801186011E50047155E /* japan.csv in Resources */,
+				48BE9328185CF62800CEC78D /* StartViewViewController.xib in Resources */,
 				488EDC1D1858F3520069710A /* Images.xcassets in Resources */,
 				488EDC0F1858F3520069710A /* InfoPlist.strings in Resources */,
 				488EDC181858F3520069710A /* Main.storyboard in Resources */,
@@ -273,7 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488EDC1B1858F3520069710A /* ViewController.m in Sources */,
+				48BE9327185CF62800CEC78D /* ViewController.m in Sources */,
+				488EDC1B1858F3520069710A /* GameViewController.m in Sources */,
 				488EDC151858F3520069710A /* AppDelegate.m in Sources */,
 				488EDC111858F3520069710A /* main.m in Sources */,
 			);
@@ -404,7 +418,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "myFlick/myFlick-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "myFlick/myFlick-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -417,7 +436,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "myFlick/myFlick-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "myFlick/myFlick-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
