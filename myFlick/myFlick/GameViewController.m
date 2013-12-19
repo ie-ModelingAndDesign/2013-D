@@ -16,11 +16,11 @@
     // counter .. sectionsの添字として使う.
     NSInteger counter;
 }
-// 入力する文字列を表示するテキストフィールド
+// 問題を表示するテキストフィールド
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
-// 文字列を入力するテキストフィールド
+// 文字を入力するテキストフィールド
 @property (weak, nonatomic) IBOutlet UITextField *inputText;
-// 常に結果を表示させておくテキストフィールド
+// 入力の状態を常に表示させておくテキストフィールド
 @property (weak, nonatomic) IBOutlet UILabel *statementLabel;
 
 // 文字が入力されると実行するメソッド
@@ -85,12 +85,14 @@
     _textLabel.text = sections[0];
 }
 
-//常にチェックするメソッド
+// 常にチェックするメソッド
 - (IBAction)checkCompare:(id)sender{
+    // 問題の文字と入力した文字を比較します
     if ([_textLabel.text isEqualToString:_inputText.text]) {
+        // 正解していた場合に, counterがsectionsの要素数を超えていたら, 終了です.
         if (counter >= sections.count) {
             _statementLabel.text = @"終了！";
-            _inputText.enabled = NO;
+            _inputText.enabled = NO; // 入力不可になります
         } else {
             _textLabel.text = sections[counter]; // counterは1からです.
             counter++;
@@ -100,7 +102,7 @@
     }
 }
 
-//やめるボタンのタップで実行するメソッド
+// やめるボタンのタップで実行するメソッド
 - (IBAction)tapButton:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"確認"
                                                     message:@"本当にやめますか?"
@@ -109,13 +111,14 @@
     [alert show]; // アラートを表示する
 }
 
-//アラートのボタンがタップされた場合の処理(デリゲートメソッド）
+// アラートのボタンがタップされた場合の処理(デリゲートメソッド）
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 0){
-        //キャンセルボタン
-        //ここに何か処理を追加して下さい
+        // キャンセルボタン
+        // ここに何か処理を追加して下さい
     }else if(buttonIndex == 1){
-        
+        // 確認ボタン
+        // ここに何か処理を追加して下さい
     }
 }
 
