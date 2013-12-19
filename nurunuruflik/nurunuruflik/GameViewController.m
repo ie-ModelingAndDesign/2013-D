@@ -34,7 +34,6 @@ BOOL timeflg=FALSE;
 
 NSTimer *timer;
 
-
 - (void)onTimer:(NSTimer*)timer {
     if(timeflg == TRUE && start_date > 0.00){
         start_date -= 0.01;
@@ -103,7 +102,7 @@ NSTimer *timer;
     BOOL titleUse = true;
     // csvFileを最後まで読み込み, sectionsを完成させます.
     while (![scanner isAtEnd]) {
-        // 1行読み込む
+        // lineに1行読み込む
         [scanner scanUpToCharactersFromSet:chSet intoString:&line];
         if (titleUse) {
             // 配列に挿入します
@@ -136,6 +135,7 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+//enter
 - (IBAction)Exit:(id)sender {
     NSString *strExample = self.Example.text;
     NSString *strInput = self.Input.text;
