@@ -54,6 +54,8 @@
 		48AEF6E31864FCA90082466E /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
 		48AEF6E51864FCB00082466E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		48AEF6E71864FCB70082466E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		48FA881A18656BCF00EDE8F1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48FA881B18656BD000EDE8F1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		695C79511850187900941C47 /* HowtoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowtoViewController.h; sourceTree = "<group>"; };
 		695C79521850187900941C47 /* HowtoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowtoViewController.m; sourceTree = "<group>"; };
 		695C7995185021BF00941C47 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 699BE97B184B0CF400AD0741;
 			productRefGroup = 699BE985184B0CF400AD0741 /* Products */;
@@ -348,6 +351,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				699BE991184B0CF400AD0741 /* en */,
+				48FA881A18656BCF00EDE8F1 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -364,6 +368,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				699BE9B0184B0CF400AD0741 /* en */,
+				48FA881B18656BD000EDE8F1 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
