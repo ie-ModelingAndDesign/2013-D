@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController
+// UIAlertViewクラスのデリゲートプロトコルUIAlertViewDelegateを採用する
+@interface TimerViewController : UIViewController <UIAlertViewDelegate>
 
 @end

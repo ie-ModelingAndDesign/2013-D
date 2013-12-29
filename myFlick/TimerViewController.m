@@ -16,6 +16,8 @@
 }
 // タイムを表示するラベル
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+// 中断ボタンとアクション接続するメソッド
+- (IBAction)alertButton:(id)sender;
 
 @end
 
@@ -64,6 +66,37 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// 中断ボタンのタップで実行するメソッド
+- (IBAction)alertButton:(id)sender {
+    [countdown_timer invalidate]; // タイマー停止
+    // アラート作成
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"中断"
+                                                    message:@"やめますか?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"キャンセル"
+                                          otherButtonTitles:@"OK",nil];
+    [alert show]; // アラートを表示する
+}
+
+// アラートのボタンがタップされた場合の処理(デリゲートメソッド)
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0){
+        // キャンセルボタン
+        NSLog(@"キャンセルされました");
+        // 再度タイマーのインスタンスを作る
+        countdown_timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                                           target:self
+                                                         selector:@selector(update)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        [countdown_timer fire]; // タイマースタート
+    } else if (buttonIndex == 1){
+        // OKボタン
+        NSLog(@"OKを選択しました");
+    }
 }
 
 @end

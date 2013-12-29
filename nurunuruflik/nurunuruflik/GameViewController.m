@@ -206,11 +206,17 @@ NSTimer *timer;
     if (buttonIndex == 0){
         // キャンセルボタン
         NSLog(@"キャンセルされました");
-        
-        // タイマーを開始する
+        // 再度タイマーのインスタンスを作る
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                                           target:self
+                                                         selector:@selector(onTimer:)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        [timer fire]; // タイマースタート
     } else if (buttonIndex == 1){
         // OKボタン
         NSLog(@"OKを選択しました");
     }
 }
+
 @end
