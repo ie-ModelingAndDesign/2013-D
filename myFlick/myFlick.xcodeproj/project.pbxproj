@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48187C8A1870DD26006DD356 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48187C891870DD26006DD356 /* TimerViewController.m */; };
 		4821ABEE1862477300AF83A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABEC1862477300AF83A1 /* Default-568h@2x.png */; };
 		4821ABEF1862477300AF83A1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABED1862477300AF83A1 /* Default@2x.png */; };
 		4821ABF11862480000AF83A1 /* todouhuken.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4821ABF01862480000AF83A1 /* todouhuken.csv */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48187C881870DD25006DD356 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimerViewController.h; path = ../TimerViewController.h; sourceTree = "<group>"; };
+		48187C891870DD26006DD356 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimerViewController.m; path = ../TimerViewController.m; sourceTree = "<group>"; };
 		4821ABEC1862477300AF83A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4821ABED1862477300AF83A1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4821ABF01862480000AF83A1 /* todouhuken.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todouhuken.csv; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				488EDC161858F3520069710A /* Main.storyboard */,
 				488EDC191858F3520069710A /* GameViewController.h */,
 				488EDC1A1858F3520069710A /* GameViewController.m */,
+				48187C881870DD25006DD356 /* TimerViewController.h */,
+				48187C891870DD26006DD356 /* TimerViewController.m */,
 				48BE9324185CF62800CEC78D /* ViewController.h */,
 				48BE9325185CF62800CEC78D /* ViewController.m */,
 				488EDC1C1858F3520069710A /* Images.xcassets */,
@@ -296,6 +301,7 @@
 			files = (
 				48BE9327185CF62800CEC78D /* ViewController.m in Sources */,
 				488EDC1B1858F3520069710A /* GameViewController.m in Sources */,
+				48187C8A1870DD26006DD356 /* TimerViewController.m in Sources */,
 				488EDC151858F3520069710A /* AppDelegate.m in Sources */,
 				488EDC111858F3520069710A /* main.m in Sources */,
 			);

@@ -20,6 +20,8 @@
 - (IBAction)checkCompare:(id)sender;
 // csvファイルを読み込んで, クイズリストを作るメソッド.
 - (void)fileLoadAndMakeQuizList;
+// 中断ボタンとアクション接続するメソッド
+- (IBAction)alertButton:(id)sender;
 
 @end
 
@@ -40,7 +42,7 @@ NSTimer *timer;
         self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
     }else if(start_date < 0.00){
         timeflg = FALSE;
-        [timer invalidate];
+        [timer invalidate]; // タイマー停止
         self.GTime.text = @"0.00";
         start_date = 0.00;
         self.Result.hidden = NO;
@@ -72,7 +74,12 @@ NSTimer *timer;
     self.GTime.text = @"60.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    // タイマーの設定
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                             target:self
+                                           selector:@selector(onTimer:)
+                                           userInfo:nil
+                                            repeats:YES];
     
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
@@ -120,6 +127,9 @@ NSTimer *timer;
     }
     // 1問目を表示します
     self.Example.text = sections[0];
+}
+
+- (IBAction)stopButton:(id)sender {
 }
 
 -(void)viewDidUnload{
@@ -177,4 +187,30 @@ NSTimer *timer;
     // Dispose of any resources that can be recreated.
 }
 
+// ボタンのタップで実行するメソッド
+- (IBAction)alertButton:(id)sender{
+    // タイマーを止める
+    [timer invalidate];
+    // アラートを作る
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"中断"
+                                                    message:@"やめますか?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"キャンセル"
+                                          otherButtonTitles:@"OK",nil];
+    [alert show]; // アラートを表示する
+}
+
+// アラートのボタンがタップされた場合の処理(デリゲートメソッド)
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0){
+        // キャンセルボタン
+        NSLog(@"キャンセルされました");
+        
+        // タイマーを開始する
+    } else if (buttonIndex == 1){
+        // OKボタン
+        NSLog(@"OKを選択しました");
+    }
+}
 @end

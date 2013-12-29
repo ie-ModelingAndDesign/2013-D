@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+// UIAlertViewクラスのデリゲートプロトコルUIAlertViewDelegateを採用する
+@interface GameViewController : UIViewController <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *GTime;
 @property (weak, nonatomic) IBOutlet UILabel *Result;
