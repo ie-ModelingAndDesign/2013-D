@@ -90,7 +90,7 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="modal" id="wLp-dc-l68"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="wLp-dc-l68"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-zK-cbs">
@@ -102,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="modal" id="8nl-Fg-tix"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" id="8nl-Fg-tix"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-CM-h8k">
@@ -260,7 +260,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wBZ-jx-YuS"/>
         <segue reference="N79-D5-GTO"/>
+        <segue reference="wBZ-jx-YuS"/>
     </inferredMetricsTieBreakers>
 </document>
