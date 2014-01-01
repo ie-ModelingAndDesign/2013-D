@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// UIAlertViewクラスのデリゲートプロトコルUIAlertViewDelegateを採用する
 @interface GameViewController : UIViewController <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *GTime;
@@ -20,6 +19,8 @@
 
 - (IBAction)Exit:(id)sender;
 - (IBAction)Start:(id)sender;
+// 中断ボタンとアクション接続するメソッド
+- (IBAction)alertButton:(id)sender;
 
 -(void)onTimer:(NSTimer*)timer;
 

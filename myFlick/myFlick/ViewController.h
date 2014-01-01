@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+// TimerViewControllerクラスのヘッダファイルを読み込む
+#import "TimerViewController.h"
 
-@interface ViewController : UIViewController
+// TimerViewControllerDelegateデリゲートを採用する
+@interface ViewController : UIViewController <TimerViewControllerDelegate>
 
 @end

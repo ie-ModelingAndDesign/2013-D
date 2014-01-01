@@ -85,7 +85,7 @@
 {
     if (buttonIndex == 0){
         // キャンセルボタン
-        NSLog(@"キャンセルされました");
+        //NSLog(@"キャンセルされました");
         // 再度タイマーのインスタンスを作る
         countdown_timer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                            target:self
@@ -95,7 +95,10 @@
         [countdown_timer fire]; // タイマースタート
     } else if (buttonIndex == 1){
         // OKボタン
-        NSLog(@"OKを選択しました");
+        //NSLog(@"OKを選択しました");
+        // 画面を戻すための処理
+        // デリゲート先にtimerViewControllerDidFinishメソッドの処理を頼む
+        [self.delegate timerViewControllerDidFinish:self];
     }
 }
 

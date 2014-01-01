@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "GameViewController.h"
 
 @interface ViewController ()
 
@@ -21,6 +20,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // navigation barを隠す
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

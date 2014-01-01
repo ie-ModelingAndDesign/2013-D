@@ -25,8 +25,7 @@
 
 // 文字が入力されると実行するメソッド
 - (IBAction)checkCompare:(id)sender;
-// やめるボタンとアクション接続するメソッド
-- (IBAction)tapButton:(id)sender;
+
 // csvファイルを読み込んで, クイズリストを作るメソッド.
 - (void)fileLoadAndMakeQuizList;
 @end
@@ -102,30 +101,10 @@
     }
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-// やめるボタンのタップで実行するメソッド
-- (IBAction)tapButton:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"選んで下さい"
-                                                    message:@"ご予約は?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"キャンセル"
-                                          otherButtonTitles:@"Aコース",@"Bコース",@"Cコース",nil];
-    [alert show]; // アラートを表示する
-}
-
-// アラートのボタンがタップされた場合の処理(デリゲートメソッド）
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 0){
-        // キャンセルボタンの処理
-    }else if(buttonIndex == 1){
-        // OKボタンの処理
-    }
 }
 
 @end

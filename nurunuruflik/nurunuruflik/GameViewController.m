@@ -16,12 +16,11 @@
     // counter .. sectionsの添字として使う.
     NSInteger counter;
 }
+
 // 文字が入力されると実行するメソッド
 - (IBAction)checkCompare:(id)sender;
 // csvファイルを読み込んで, クイズリストを作るメソッド.
 - (void)fileLoadAndMakeQuizList;
-// 中断ボタンとアクション接続するメソッド
-- (IBAction)alertButton:(id)sender;
 
 @end
 
@@ -89,6 +88,18 @@ NSTimer *timer;
     
     //キーボードをデフォルト表示します.
     [self.Input becomeFirstResponder];
+}
+
+// GameViewController表示時
+-(void)viewWillAppear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+// GameViewControllerから遷移時
+-(void)viewWillDisappear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 // csvファイルを読み込んで, クイズリストを作るメソッド
@@ -193,10 +204,10 @@ NSTimer *timer;
     [timer invalidate];
     // アラートを作る
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"中断"
-                                                    message:@"やめますか?"
+                                                    message:@"タイトルに戻りますか?"
                                                    delegate:self
                                           cancelButtonTitle:@"キャンセル"
-                                          otherButtonTitles:@"OK",nil];
+                                          otherButtonTitles:@"はい",nil];
     [alert show]; // アラートを表示する
 }
 
@@ -205,7 +216,7 @@ NSTimer *timer;
 {
     if (buttonIndex == 0){
         // キャンセルボタン
-        NSLog(@"キャンセルされました");
+        //NSLog(@"キャンセルされました");
         // 再度タイマーのインスタンスを作る
         timer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                            target:self
@@ -214,8 +225,9 @@ NSTimer *timer;
                                                           repeats:YES];
         [timer fire]; // タイマースタート
     } else if (buttonIndex == 1){
-        // OKボタン
-        NSLog(@"OKを選択しました");
+        // OKボタン(タイトル画面へ遷移)
+        //NSLog(@"OKを選択しました");
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
 
