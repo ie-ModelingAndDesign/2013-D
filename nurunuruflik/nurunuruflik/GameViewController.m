@@ -8,6 +8,9 @@
 
 #import "GameViewController.h"
 
+// TIME .. タイマーの初期値
+#define TIME 60.00
+
 @interface GameViewController ()
 {
     // インスタンス変数宣言
@@ -25,12 +28,14 @@
 @end
 
 @implementation GameViewController
+
 @synthesize GTime;
 @synthesize Result;
 @synthesize Example;
 @synthesize Input;
 
-float start_date = 60.00;
+// start_date .. タイマーの初期値
+float start_date;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
@@ -94,6 +99,8 @@ NSTimer *timer;
 -(void)viewWillAppear:(BOOL)animated{
     // navigation bar非表示
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    // タイマー初期化
+    start_date = TIME;
 }
 
 // GameViewControllerから遷移時
