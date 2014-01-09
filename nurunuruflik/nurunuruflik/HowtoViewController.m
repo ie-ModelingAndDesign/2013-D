@@ -29,6 +29,19 @@
 	// Do any additional setup after loading the view.
 }
 
+// HowToViewController表示時
+-(void)viewWillAppear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+// HowToViewControllerから遷移時
+-(void)viewWillDisappear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -54,6 +54,7 @@
 		48AEF6E31864FCA90082466E /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
 		48AEF6E51864FCB00082466E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		48AEF6E71864FCB70082466E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		48E08B1D18739B5900AF5754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48FA881A18656BCF00EDE8F1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		48FA881B18656BD000EDE8F1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		695C79511850187900941C47 /* HowtoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowtoViewController.h; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		699BE995184B0CF400AD0741 /* nurunuruflik-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nurunuruflik-Prefix.pch"; sourceTree = "<group>"; };
 		699BE996184B0CF400AD0741 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		699BE997184B0CF400AD0741 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		699BE99A184B0CF400AD0741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		699BE99C184B0CF400AD0741 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ViewController.h; sourceTree = "<group>"; };
 		699BE99D184B0CF400AD0741 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		699BE99F184B0CF400AD0741 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 				6B1F8FBC185CCDE9000D2A4E /* sections_Kanji.csv */,
 				485DD30918629F22005B55E9 /* todouhuken.csv */,
 				485DD30718629F19005B55E9 /* todouhuken_Kanji.csv */,
+				696C40A418542E5B0018005B /* DifficultyViewController.h */,
 			);
 			name = QuizList;
 			sourceTree = "<group>";
@@ -166,7 +167,6 @@
 			children = (
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
 				699BE997184B0CF400AD0741 /* AppDelegate.m */,
-				696C40A418542E5B0018005B /* DifficultyViewController.h */,
 				485DD30618629E05005B55E9 /* QuizList */,
 				696C40A518542E5B0018005B /* DifficultyViewController.m */,
 				695C79511850187900941C47 /* HowtoViewController.h */,
@@ -359,7 +359,7 @@
 		699BE999184B0CF400AD0741 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				699BE99A184B0CF400AD0741 /* Base */,
+				48E08B1D18739B5900AF5754 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

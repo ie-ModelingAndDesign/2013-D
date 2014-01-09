@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *GTime;
 @property (weak, nonatomic) IBOutlet UILabel *Result;
@@ -19,6 +19,8 @@
 
 - (IBAction)Exit:(id)sender;
 - (IBAction)Start:(id)sender;
+// 中断ボタンとアクション接続するメソッド
+- (IBAction)alertButton:(id)sender;
 
 -(void)onTimer:(NSTimer*)timer;
 

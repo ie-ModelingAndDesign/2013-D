@@ -35,4 +35,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+// TimerViewControllerクラスのデリゲートメソッド
+- (void)timerViewControllerDidFinish:(TimerViewController *)controller
+{
+    // スタックしてあるビューコントローラに移動する(戻ってくる)
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// セグエで移動する直前に発生するイベント
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // セグエの識別子(identifier)ガshowAlternateならば
+    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+        // 移動先のビューコントローラのデリゲート先にselfを設定する
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
+
 @end

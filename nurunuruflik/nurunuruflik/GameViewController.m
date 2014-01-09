@@ -8,6 +8,9 @@
 
 #import "GameViewController.h"
 
+// TIME .. タイマーの初期値
+#define TIME 60.00
+
 @interface GameViewController ()
 {
     // インスタンス変数宣言
@@ -16,6 +19,7 @@
     // counter .. sectionsの添字として使う.
     NSInteger counter;
 }
+
 // 文字が入力されると実行するメソッド
 - (IBAction)checkCompare:(id)sender;
 // csvファイルを読み込んで, クイズリストを作るメソッド.
@@ -24,12 +28,14 @@
 @end
 
 @implementation GameViewController
+
 @synthesize GTime;
 @synthesize Result;
 @synthesize Example;
 @synthesize Input;
 
-float start_date = 60.00;
+// start_date .. タイマーの初期値
+float start_date;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
@@ -40,7 +46,7 @@ NSTimer *timer;
         self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
     }else if(start_date < 0.00){
         timeflg = FALSE;
-        [timer invalidate];
+        [timer invalidate]; // タイマー停止
         self.GTime.text = @"0.00";
         start_date = 0.00;
         self.Result.hidden = NO;
@@ -72,7 +78,12 @@ NSTimer *timer;
     self.GTime.text = @"60.00";
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    // タイマーの設定
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                             target:self
+                                           selector:@selector(onTimer:)
+                                           userInfo:nil
+                                            repeats:YES];
     
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
@@ -82,6 +93,20 @@ NSTimer *timer;
     
     //キーボードをデフォルト表示します.
     [self.Input becomeFirstResponder];
+}
+
+// GameViewController表示時
+-(void)viewWillAppear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    // タイマー初期化
+    start_date = TIME;
+}
+
+// GameViewControllerから遷移時
+-(void)viewWillDisappear:(BOOL)animated{
+    // navigation bar非表示
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 // csvファイルを読み込んで, クイズリストを作るメソッド
@@ -120,6 +145,9 @@ NSTimer *timer;
     }
     // 1問目を表示します
     self.Example.text = sections[0];
+}
+
+- (IBAction)stopButton:(id)sender {
 }
 
 -(void)viewDidUnload{
@@ -175,6 +203,39 @@ NSTimer *timer;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// ボタンのタップで実行するメソッド
+- (IBAction)alertButton:(id)sender{
+    // タイマーを止める
+    [timer invalidate];
+    // アラートを作る
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"中断"
+                                                    message:@"タイトルに戻りますか?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"キャンセル"
+                                          otherButtonTitles:@"はい",nil];
+    [alert show]; // アラートを表示する
+}
+
+// アラートのボタンがタップされた場合の処理(デリゲートメソッド)
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0){
+        // キャンセルボタン
+        //NSLog(@"キャンセルされました");
+        // 再度タイマーのインスタンスを作る
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                                           target:self
+                                                         selector:@selector(onTimer:)
+                                                         userInfo:nil
+                                                          repeats:YES];
+        [timer fire]; // タイマースタート
+    } else if (buttonIndex == 1){
+        // OKボタン(タイトル画面へ遷移)
+        //NSLog(@"OKを選択しました");
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
 }
 
 @end
