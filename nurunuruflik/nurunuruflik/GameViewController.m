@@ -144,8 +144,6 @@ NSTimer *timer;
     self.Example.text = sections[0];
 }
 
-- (IBAction)stopButton:(id)sender {
-}
 
 -(void)viewDidUnload{
     [self setExample:nil];
@@ -160,22 +158,6 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-//enter
-/*- (IBAction)Exit:(id)sender {
-    NSString *strExample = self.Example.text;
-    NSString *strInput = self.Input.text;
-    if ([strExample isEqualToString:strInput]) {
-        // 例題と入力した文章が一致！
-        timeflg = FALSE;
-        self.Result.hidden = NO;
-        self.Result.text = @"正解！";
-    }else {
-        // 入力ミス
-        //　タイマーを止めない。
-        self.Result.hidden = NO;
-        self.Result.text = @"ミス！";
-    }
-}*/
 
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
