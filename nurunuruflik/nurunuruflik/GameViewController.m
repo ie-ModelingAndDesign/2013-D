@@ -164,7 +164,7 @@ NSTimer *timer;
 }
 
 //enter
-- (IBAction)Exit:(id)sender {
+/*- (IBAction)Exit:(id)sender {
     NSString *strExample = self.Example.text;
     NSString *strInput = self.Input.text;
     if ([strExample isEqualToString:strInput]) {
@@ -178,7 +178,7 @@ NSTimer *timer;
         self.Result.hidden = NO;
         self.Result.text = @"ミス！";
     }
-}
+}*/
 
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
