@@ -115,7 +115,6 @@
 				6B1F8FBC185CCDE9000D2A4E /* sections_Kanji.csv */,
 				485DD30918629F22005B55E9 /* todouhuken.csv */,
 				485DD30718629F19005B55E9 /* todouhuken_Kanji.csv */,
-				696C40A418542E5B0018005B /* DifficultyViewController.h */,
 			);
 			name = QuizList;
 			sourceTree = "<group>";
@@ -167,15 +166,16 @@
 			children = (
 				699BE996184B0CF400AD0741 /* AppDelegate.h */,
 				699BE997184B0CF400AD0741 /* AppDelegate.m */,
-				485DD30618629E05005B55E9 /* QuizList */,
-				696C40A518542E5B0018005B /* DifficultyViewController.m */,
-				695C79511850187900941C47 /* HowtoViewController.h */,
-				695C79521850187900941C47 /* HowtoViewController.m */,
-				695C7995185021BF00941C47 /* GameViewController.h */,
-				695C7996185021BF00941C47 /* GameViewController.m */,
 				699BE999184B0CF400AD0741 /* Main.storyboard */,
 				699BE99C184B0CF400AD0741 /* ViewController.h */,
 				699BE99D184B0CF400AD0741 /* ViewController.m */,
+				695C79511850187900941C47 /* HowtoViewController.h */,
+				695C79521850187900941C47 /* HowtoViewController.m */,
+				696C40A418542E5B0018005B /* DifficultyViewController.h */,
+				696C40A518542E5B0018005B /* DifficultyViewController.m */,
+				695C7995185021BF00941C47 /* GameViewController.h */,
+				695C7996185021BF00941C47 /* GameViewController.m */,
+				485DD30618629E05005B55E9 /* QuizList */,
 				699BE99F184B0CF400AD0741 /* Images.xcassets */,
 				48AEF6DA1864F3720082466E /* Images */,
 				699BE98E184B0CF400AD0741 /* Supporting Files */,
