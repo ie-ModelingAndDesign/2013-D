@@ -18,6 +18,8 @@
 		695C79531850187900941C47 /* HowtoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C79521850187900941C47 /* HowtoViewController.m */; };
 		695C7997185021BF00941C47 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C7996185021BF00941C47 /* GameViewController.m */; };
 		696C40A618542E5B0018005B /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696C40A518542E5B0018005B /* DifficultyViewController.m */; };
+		699AFAB71883B9AF004AFFDE /* sections2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 699AFAB61883B9AF004AFFDE /* sections2.csv */; };
+		699AFAB91883B9ED004AFFDE /* sections3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 699AFAB81883B9ED004AFFDE /* sections3.csv */; };
 		699BE988184B0CF400AD0741 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE987184B0CF400AD0741 /* Foundation.framework */; };
 		699BE98A184B0CF400AD0741 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE989184B0CF400AD0741 /* CoreGraphics.framework */; };
 		699BE98C184B0CF400AD0741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BE98B184B0CF400AD0741 /* UIKit.framework */; };
@@ -63,6 +65,8 @@
 		695C7996185021BF00941C47 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		696C40A418542E5B0018005B /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
 		696C40A518542E5B0018005B /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
+		699AFAB61883B9AF004AFFDE /* sections2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections2.csv; sourceTree = "<group>"; };
+		699AFAB81883B9ED004AFFDE /* sections3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections3.csv; sourceTree = "<group>"; };
 		699BE984184B0CF400AD0741 /* nurunuruflik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nurunuruflik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699BE987184B0CF400AD0741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699BE989184B0CF400AD0741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				485DD30B18629F9F005B55E9 /* sections.csv */,
+				699AFAB61883B9AF004AFFDE /* sections2.csv */,
+				699AFAB81883B9ED004AFFDE /* sections3.csv */,
 				6B1F8FBC185CCDE9000D2A4E /* sections_Kanji.csv */,
 				485DD30918629F22005B55E9 /* todouhuken.csv */,
 				485DD30718629F19005B55E9 /* todouhuken_Kanji.csv */,
@@ -295,11 +301,13 @@
 				699BE992184B0CF400AD0741 /* InfoPlist.strings in Resources */,
 				6B1F8FBD185CCDE9000D2A4E /* sections_Kanji.csv in Resources */,
 				48AEF6E81864FCB70082466E /* Default-568h@2x.png in Resources */,
+				699AFAB71883B9AF004AFFDE /* sections2.csv in Resources */,
 				48AEF6E61864FCB00082466E /* Default@2x.png in Resources */,
 				48AEF6E41864FCA90082466E /* icon-60@2x.png in Resources */,
 				699BE99B184B0CF400AD0741 /* Main.storyboard in Resources */,
 				48AEF6E21864FC940082466E /* icon-small@2x.png in Resources */,
 				485DD30C18629F9F005B55E9 /* sections.csv in Resources */,
+				699AFAB91883B9ED004AFFDE /* sections3.csv in Resources */,
 				485DD30818629F19005B55E9 /* todouhuken_Kanji.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

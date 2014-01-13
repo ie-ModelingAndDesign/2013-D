@@ -7,8 +7,28 @@
 //
 
 #import "DifficultyViewController.h"
+#import "GameViewController.h"
 
 @implementation DifficultyViewController
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([[segue identifier] isEqualToString:@"easy"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    }
+    if([[segue identifier] isEqualToString:@"normal"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];;
+    }
+    if([[segue identifier] isEqualToString:@"hard"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];;
+    }
+
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
