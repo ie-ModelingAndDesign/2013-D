@@ -13,11 +13,8 @@
 
 @interface GameViewController ()
 {
-    // インスタンス変数宣言
-    // sections .. csvFileから1行ずつ読み込んで配列にする.
-    NSMutableArray *sections;
-    // counter .. sectionsの添字として使う.
-    NSInteger counter;
+    NSMutableArray *sections; // csvFileから1行ずつ読み込んで配列にする.
+    NSInteger counter; // sectionsの添字として使う.
 }
 
 // 文字が入力されると実行するメソッド
@@ -51,13 +48,13 @@ NSTimer *timer;
         start_date = 0.00;
         self.Result.hidden = NO;
         self.Result.text = @"タイムアップ";
-        Input.enabled = NO;
+        //Input.enabled = NO;
     }else if(start_date == 0.00){
         timer = nil;
-        start_date = 60.00;
-    }else if(start_date <= 60.00 && start_date > 0.00){
+        start_date = TIME;
+    }else if(start_date <= TIME && start_date > 0.00){
         timer = nil;
-        start_date = 60.00;
+        start_date = TIME;
         self.Input.text = NULL;
     }
 }
@@ -75,7 +72,7 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.GTime.text = @"60.00";
+    self.GTime.text = [NSString stringWithFormat:@"%f",TIME];
     self.Example.text = @"スタート";
     self.Result.hidden = YES;
     // タイマーの設定
@@ -88,8 +85,8 @@ NSTimer *timer;
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
     
-    // counterを1で初期化します.
-    counter = 1;
+    // counterを0で初期化します.
+    counter = 0;
     
     //キーボードをデフォルト表示します.
     [self.Input becomeFirstResponder];
@@ -98,7 +95,7 @@ NSTimer *timer;
 // GameViewController表示時
 -(void)viewWillAppear:(BOOL)animated{
     // navigation bar非表示
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
     // タイマー初期化
     start_date = TIME;
 }
@@ -147,8 +144,6 @@ NSTimer *timer;
     self.Example.text = sections[0];
 }
 
-- (IBAction)stopButton:(id)sender {
-}
 
 -(void)viewDidUnload{
     [self setExample:nil];
@@ -163,22 +158,6 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-//enter
-- (IBAction)Exit:(id)sender {
-    NSString *strExample = self.Example.text;
-    NSString *strInput = self.Input.text;
-    if ([strExample isEqualToString:strInput]) {
-        // 例題と入力した文章が一致！
-        timeflg = FALSE;
-        self.Result.hidden = NO;
-        self.Result.text = @"正解！";
-    }else {
-        // 入力ミス
-        //　タイマーを止めない。
-        self.Result.hidden = NO;
-        self.Result.text = @"ミス！";
-    }
-}
 
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
@@ -190,10 +169,11 @@ NSTimer *timer;
 // 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
 - (IBAction)checkCompare:(id)sender{
     if ([self.Example.text isEqualToString:self.Input.text]) {
-        if (counter >= sections.count) {
+        if (counter > sections.count) {
             self.Input.enabled = NO;
         } else {
-            self.Example.text = sections[counter]; // counterは1からです.
+            goodAnswers++; // 正解数を1増やします.
+            self.Example.text = sections[counter + 1]; // counterは0からです.
             counter++;
         }
     }
@@ -219,17 +199,17 @@ NSTimer *timer;
 }
 
 // アラートのボタンがタップされた場合の処理(デリゲートメソッド)
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0){
         // キャンセルボタン
         //NSLog(@"キャンセルされました");
         // 再度タイマーのインスタンスを作る
         timer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                           target:self
-                                                         selector:@selector(onTimer:)
-                                                         userInfo:nil
-                                                          repeats:YES];
+                                                 target:self
+                                               selector:@selector(onTimer:)
+                                               userInfo:nil
+                                                repeats:YES];
         [timer fire]; // タイマースタート
     } else if (buttonIndex == 1){
         // OKボタン(タイトル画面へ遷移)

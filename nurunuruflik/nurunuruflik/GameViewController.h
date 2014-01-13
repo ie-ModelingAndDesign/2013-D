@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface GameViewController : UIViewController <UIAlertViewDelegate>
+{
+    NSInteger goodAnswers; // 正解数
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *GTime;
 @property (weak, nonatomic) IBOutlet UILabel *Result;
