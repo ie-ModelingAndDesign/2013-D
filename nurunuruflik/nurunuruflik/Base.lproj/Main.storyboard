@@ -235,7 +235,13 @@
                                 <rect key="frame" x="20" y="68" width="280" height="306"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">○ぬるぬるフリックの説明 初めにeasy nomal hardの３種類からモード選択をしてください。難易度を選択した後はゲームが始まります。初めはキーボード入力となっているのでフリック入力に直してから入力を開始してください。  ※めんどくさいという方は本体設定でキーボード入力よりもフリック入力を優先して出せるようにしておくと楽になります。  ○ゲーム内容の説明 ゲームを開始するとひらがなで単語が表示され、制限時間内にどれだけの単語を打ち込めるかでポイントが決まります。単語を入力し終えるごとにポイントが加算され、終了時に合計が算出されます。文字を打ち間違えるとマイナスが入るので注意してください。</mutableString>
+                                <mutableString key="text">○ぬるぬるフリックの説明
+初めにeasy nomal hardの３種類からモード選択をしてください。難易度を選択した後はゲームが始まります。初めはキーボード入力となっているのでフリック入力に直してから入力を開始してください。
+
+※めんどくさいという方は本体設定でキーボード入力よりもフリック入力を優先して出せるようにしておくと楽になります。
+
+○ゲーム内容の説明
+ゲームを開始するとひらがなで単語が表示され、制限時間内にどれだけの単語を打ち込めるかでポイントが決まります。単語を入力し終えるごとにポイントが加算され、終了時に合計が算出されます。文字を打ち間違えるとマイナスが入るので注意してください。</mutableString>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -272,7 +278,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="H2i-yW-T6Z"/>
-        <segue reference="wLp-dc-l68"/>
+        <segue reference="N79-D5-GTO"/>
+        <segue reference="wBZ-jx-YuS"/>
     </inferredMetricsTieBreakers>
 </document>
