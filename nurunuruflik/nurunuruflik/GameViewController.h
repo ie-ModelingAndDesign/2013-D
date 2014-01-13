@@ -18,13 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *Example;
 @property (weak, nonatomic) IBOutlet UITextField *Input;
 
-
-
-- (IBAction)Exit:(id)sender;
 - (IBAction)Start:(id)sender;
+-(void)onTimer:(NSTimer*)timer;
+
 // 中断ボタンとアクション接続するメソッド
 - (IBAction)alertButton:(id)sender;
-
--(void)onTimer:(NSTimer*)timer;
 
 @end

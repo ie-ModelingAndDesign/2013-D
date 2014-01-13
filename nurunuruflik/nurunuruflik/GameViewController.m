@@ -31,7 +31,7 @@
 @synthesize Example;
 @synthesize Input;
 
-// start_date .. タイマーの初期値
+// start_date .. タイマーの値
 float start_date;
 BOOL timeflg=FALSE;
 
@@ -72,8 +72,14 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.GTime.text = [NSString stringWithFormat:@"%f",TIME];
-    self.Example.text = @"スタート";
+    
+    // キーボードをデフォルト表示します.
+    [self.Input becomeFirstResponder];
+    
+    // クイズリストを作成して, 1問目を表示します.
+    [self fileLoadAndMakeQuizList];
+    
+    self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
     self.Result.hidden = YES;
     // タイマーの設定
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01
@@ -82,22 +88,18 @@ NSTimer *timer;
                                            userInfo:nil
                                             repeats:YES];
     
-    // クイズリストを作成して, 1問目を表示します.
-    [self fileLoadAndMakeQuizList];
-    
     // counterを0で初期化します.
     counter = 0;
-    
-    //キーボードをデフォルト表示します.
-    [self.Input becomeFirstResponder];
 }
 
 // GameViewController表示時
 -(void)viewWillAppear:(BOOL)animated{
     // navigation bar非表示
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     // タイマー初期化
     start_date = TIME;
+    // goodAnswersは0からスタート
+    goodAnswers = 0;
 }
 
 // GameViewControllerから遷移時
@@ -110,7 +112,7 @@ NSTimer *timer;
 - (void)fileLoadAndMakeQuizList
 {
     // CSVファイルからセクションデータを取得する
-    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"todouhuken" ofType:@"csv"];
     NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
     NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
     NSScanner *scanner = [NSScanner scannerWithString:csv];
@@ -144,7 +146,6 @@ NSTimer *timer;
     self.Example.text = sections[0];
 }
 
-
 -(void)viewDidUnload{
     [self setExample:nil];
     [self setGTime:nil];
@@ -168,12 +169,20 @@ NSTimer *timer;
 
 // 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
 - (IBAction)checkCompare:(id)sender{
+    // 文字確定
+    //[self.Input resignFirstResponder];
+    //[self.Input becomeFirstResponder];
     if ([self.Example.text isEqualToString:self.Input.text]) {
         if (counter > sections.count) {
             self.Input.enabled = NO;
         } else {
+            // 次の文字列を表示する. counterは0からです.
+            self.Example.text = sections[counter + 1];
+            // 文字をクリア
+            [self.Input resignFirstResponder];
+            self.Input.text = @"";
+            [self.Input becomeFirstResponder];
             goodAnswers++; // 正解数を1増やします.
-            self.Example.text = sections[counter + 1]; // counterは0からです.
             counter++;
         }
     }
