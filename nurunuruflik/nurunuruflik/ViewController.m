@@ -13,7 +13,6 @@
 @end
 
 @implementation ViewController
-@synthesize Start;
 
 
 - (void)viewDidLoad

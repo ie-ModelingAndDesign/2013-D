@@ -11,8 +11,7 @@
 // TIME .. タイマーの初期値
 #define TIME 60.00
 
-@interface GameViewController ()
-{
+@interface GameViewController (){
     NSMutableArray *sections; // csvFileから1行ずつ読み込んで配列にする.
     NSInteger counter; // sectionsの添字として使う.
 }
