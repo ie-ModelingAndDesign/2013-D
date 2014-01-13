@@ -91,7 +91,8 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="" id="wLp-dc-l68"/>
+                                    <action selector="nextView:" destination="Xxg-FJ-nB6" eventType="touchUpInside" id="un9-5t-OG3"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="easy" id="wLp-dc-l68"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-zK-cbs">
@@ -103,7 +104,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="" id="8nl-Fg-tix"/>
+                                    <action selector="nextView:" destination="Xxg-FJ-nB6" eventType="touchUpInside" id="WfG-6c-C6w"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="normal" id="8nl-Fg-tix"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-CM-h8k">
@@ -115,7 +117,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="" id="wBZ-jx-YuS"/>
+                                    <action selector="nextView:" destination="Xxg-FJ-nB6" eventType="touchUpInside" id="gW2-hm-sRF"/>
+                                    <segue destination="jNJ-Jo-gPy" kind="push" identifier="hard" id="wBZ-jx-YuS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,6 +126,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="QHf-ws-lKK"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="easy" destination="bz5-5x-1rC" id="mck-jA-hWZ"/>
+                        <outlet property="hard" destination="0gc-CM-h8k" id="gN8-fE-pL6"/>
+                        <outlet property="normal" destination="GqR-zK-cbs" id="bmE-RE-hsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA2-q3-utg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +272,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wBZ-jx-YuS"/>
         <segue reference="H2i-yW-T6Z"/>
+        <segue reference="wLp-dc-l68"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,6 +30,10 @@
 @synthesize Result;
 @synthesize Example;
 @synthesize Input;
+@synthesize selecteasy;
+@synthesize selectnormal;
+@synthesize selecthard;
+@synthesize csvFile;
 
 // start_date .. タイマーの初期値
 float start_date;
@@ -110,7 +114,15 @@ NSTimer *timer;
 - (void)fileLoadAndMakeQuizList
 {
     // CSVファイルからセクションデータを取得する
-    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    if(selecteasy == true){
+     csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    }
+    if(selectnormal == true){
+        csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];
+    }
+    if(selecthard == true){
+        csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];
+    }
     NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
     NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
     NSScanner *scanner = [NSScanner scannerWithString:csv];

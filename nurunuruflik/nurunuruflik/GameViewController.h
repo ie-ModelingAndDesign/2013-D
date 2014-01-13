@@ -17,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *Result;
 @property (weak, nonatomic) IBOutlet UILabel *Example;
 @property (weak, nonatomic) IBOutlet UITextField *Input;
-
+@property BOOL *selecteasy;
+@property BOOL *selectnormal;
+@property BOOL *selecthard;
+@property NSString *csvFile;
 
 
 - (IBAction)Exit:(id)sender;

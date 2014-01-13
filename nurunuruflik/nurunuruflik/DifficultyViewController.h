@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameViewController.h"
 
 @interface DifficultyViewController : UIViewController
+
+
 
 @end

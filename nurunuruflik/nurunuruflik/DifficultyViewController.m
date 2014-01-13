@@ -10,6 +10,24 @@
 
 @implementation DifficultyViewController
 
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"easy"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.selecteasy = TRUE;
+    }
+    if([[segue identifier] isEqualToString:@"normal"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.selectnormal = TRUE;
+    }
+    if([[segue identifier] isEqualToString:@"hard"]){
+        GameViewController *gameViewController = [segue destinationViewController];
+        gameViewController.selecthard = TRUE;
+    }
+
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
