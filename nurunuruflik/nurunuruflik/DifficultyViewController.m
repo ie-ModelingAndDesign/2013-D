@@ -11,8 +11,6 @@
 
 @implementation DifficultyViewController
 
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if([[segue identifier] isEqualToString:@"easy"]){
@@ -63,6 +61,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

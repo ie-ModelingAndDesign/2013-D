@@ -17,6 +17,7 @@
     NSInteger charNo; // 文字列用カウンター
     char ch; // 一時保存用
     NSString *str; // 一時保存用
+    NSString *markedText; // 確定前の文字
 }
 
 // 文字が入力されると実行するメソッド
@@ -118,7 +119,7 @@ NSTimer *timer;
 - (void)fileLoadAndMakeQuizList
 {
     // CSVファイルからセクションデータを取得する
-    NSString *csvFile = [[NSBundle mainBundle] pathForResource:@"todouhuken" ofType:@"csv"];
+    //csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
     NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
     NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
     NSScanner *scanner = [NSScanner scannerWithString:csv];
@@ -175,23 +176,34 @@ NSTimer *timer;
 
 // 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
 - (IBAction)checkCompare:(id)sender{
-    NSString *markedText = [self.Input textInRange:self.Input.markedTextRange];
-    NSLog(@"markedText = %@", markedText);
+    // markedText = [self.Input textInRange:self.Input.markedTextRange];
+    // NSLog(@"markedText = %@", markedText);
     // 文字列が正解だったら
     if ([self.Example.text isEqualToString:self.Input.text]) {
-        // 次の文字列を表示する. counterは0からです.
-        self.Example.text = sections[counter + 1];
+        goodAnswers++; // 正解数を1増やします.
+        charNo = 0; // charNoを戻す
+        NSLog(@"charNo初期化, goodAnswers=%d", goodAnswers);
+        
+        if (sections.count <= counter+1) {
+            self.Input.enabled = NO; // because not endless
+            [timer invalidate];
+            self.Result.hidden = NO;
+            self.Result.text = @"Clear!";
+        } else {
+            // 次の文字列を表示する. counterは0からです.
+            self.Example.text = sections[counter + 1];
+            counter++;
+            ch = [self.Example.text characterAtIndex:charNo]; // 次の1文字を保存
+        }
+        
         // 文字列をクリア
         [self.Input resignFirstResponder];
         self.Input.text = @"";
         [self.Input becomeFirstResponder];
-        goodAnswers++; // 正解数を1増やします.
-        counter++;
-        charNo = 0; // charNoを戻す
-        ch = [self.Example.text characterAtIndex:charNo]; // 次の1文字を保存
-        NSLog(@"charNo初期化, goodAnswers=%d", goodAnswers);
-    } else if (charNo < self.Example.text.length -1 && markedText.length != 0){
-        if ([self.Input.text characterAtIndex:charNo] == [self.Example.text characterAtIndex:charNo]) {
+        
+    }
+//    else if (charNo < self.Example.text.length -1 && markedText.length != 0){
+//        if ([self.Input.text characterAtIndex:charNo] == [self.Example.text characterAtIndex:charNo]) {
 //            // 1文字正解していたら, 1文字確定
 //            [self.Input resignFirstResponder];
 //            [self.Input becomeFirstResponder];
@@ -199,8 +211,8 @@ NSTimer *timer;
 //            charNo++;
 //            ch = [self.Example.text characterAtIndex:charNo];
 //            NSLog(@"charNo=%d", charNo);
-        }
-    }
+//        }
+//    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -218,16 +230,17 @@ NSTimer *timer;
                                                     message:@"タイトルに戻りますか?"
                                                    delegate:self
                                           cancelButtonTitle:@"キャンセル"
-                                          otherButtonTitles:@"はい",nil];
+                                          otherButtonTitles:@"OK",nil];
     [alert show]; // アラートを表示する
 }
 
 // アラートのボタンがタップされた場合の処理(デリゲートメソッド)
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSLog(@"中断");
     if (buttonIndex == 0){
         // キャンセルボタン
-        //NSLog(@"キャンセルされました");
+        NSLog(@"キャンセルされました");
         // 再度タイマーのインスタンスを作る
         timer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                  target:self
@@ -237,7 +250,7 @@ NSTimer *timer;
         [timer fire]; // タイマースタート
     } else if (buttonIndex == 1){
         // OKボタン(タイトル画面へ遷移)
-        //NSLog(@"OKを選択しました");
+        NSLog(@"OKを選択しました");
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }

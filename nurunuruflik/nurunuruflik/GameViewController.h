@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *Result;
 @property (weak, nonatomic) IBOutlet UILabel *Example;
 @property (weak, nonatomic) IBOutlet UITextField *Input;
+@property NSString *csvFile;
 
 - (IBAction)Start:(id)sender;
 -(void)onTimer:(NSTimer*)timer;

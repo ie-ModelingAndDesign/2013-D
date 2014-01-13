@@ -10,6 +10,4 @@
 
 @interface DifficultyViewController : UIViewController
 
-
-
 @end
