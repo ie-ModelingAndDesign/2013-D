@@ -15,6 +15,9 @@
 {
     NSMutableArray *sections; // csvFileから1行ずつ読み込んで配列にする.
     NSInteger counter; // sectionsの添字として使う.
+    NSInteger charNo; // 文字列用カウンター
+    char ch; // 一時保存用
+    NSString *str; // 一時保存用
 }
 
 // 文字が入力されると実行するメソッド
@@ -73,11 +76,17 @@ NSTimer *timer;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // counter, chを0で初期化します.
+    counter = 0; ch = 0;
+    NSLog(@"charNo=%d", charNo);
+    
     // キーボードをデフォルト表示します.
     [self.Input becomeFirstResponder];
     
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
+    // chに1文字目を保存
+    ch = [self.Example.text characterAtIndex:charNo];
     
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
     self.Result.hidden = YES;
@@ -87,9 +96,6 @@ NSTimer *timer;
                                            selector:@selector(onTimer:)
                                            userInfo:nil
                                             repeats:YES];
-    
-    // counterを0で初期化します.
-    counter = 0;
 }
 
 // GameViewController表示時
@@ -169,21 +175,30 @@ NSTimer *timer;
 
 // 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
 - (IBAction)checkCompare:(id)sender{
-    // 文字確定
-    //[self.Input resignFirstResponder];
-    //[self.Input becomeFirstResponder];
+    NSString *markedText = [self.Input textInRange:self.Input.markedTextRange];
+    NSLog(@"markedText = %@", markedText);
+    // 文字列が正解だったら
     if ([self.Example.text isEqualToString:self.Input.text]) {
-        if (counter > sections.count) {
-            self.Input.enabled = NO;
-        } else {
-            // 次の文字列を表示する. counterは0からです.
-            self.Example.text = sections[counter + 1];
-            // 文字をクリア
-            [self.Input resignFirstResponder];
-            self.Input.text = @"";
-            [self.Input becomeFirstResponder];
-            goodAnswers++; // 正解数を1増やします.
-            counter++;
+        // 次の文字列を表示する. counterは0からです.
+        self.Example.text = sections[counter + 1];
+        // 文字列をクリア
+        [self.Input resignFirstResponder];
+        self.Input.text = @"";
+        [self.Input becomeFirstResponder];
+        goodAnswers++; // 正解数を1増やします.
+        counter++;
+        charNo = 0; // charNoを戻す
+        ch = [self.Example.text characterAtIndex:charNo]; // 次の1文字を保存
+        NSLog(@"charNo初期化, goodAnswers=%d", goodAnswers);
+    } else if (charNo < self.Example.text.length -1 && markedText.length != 0){
+        if ([self.Input.text characterAtIndex:charNo] == [self.Example.text characterAtIndex:charNo]) {
+//            // 1文字正解していたら, 1文字確定
+//            [self.Input resignFirstResponder];
+//            [self.Input becomeFirstResponder];
+//            // 次の文字を保存
+//            charNo++;
+//            ch = [self.Example.text characterAtIndex:charNo];
+//            NSLog(@"charNo=%d", charNo);
         }
     }
 }

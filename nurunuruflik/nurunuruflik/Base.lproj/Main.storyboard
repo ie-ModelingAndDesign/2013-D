@@ -147,6 +147,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
+                                    <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidEnd" id="UfK-7b-wi8"/>
                                     <action selector="Start:" destination="jNJ-Jo-gPy" eventType="editingDidBegin" id="eoN-cO-BYL"/>
                                     <action selector="checkCompare:" destination="jNJ-Jo-gPy" eventType="editingChanged" id="UFn-0v-mQ7"/>
                                 </connections>
