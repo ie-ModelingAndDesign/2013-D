@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "ResultViewController.h"
 
 // TIME .. タイマーの初期値
 #define TIME 60.00
@@ -52,7 +53,7 @@ NSTimer *timer;
         start_date = 0.00;
         self.Result.hidden = NO;
         self.Result.text = @"タイムアップ";
-        //Input.enabled = NO;
+        [self performSegueWithIdentifier:@"Result" sender:nil];
     }else if(start_date == 0.00){
         timer = nil;
         start_date = TIME;

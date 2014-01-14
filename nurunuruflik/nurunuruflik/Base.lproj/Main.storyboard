@@ -193,6 +193,7 @@
                         <outlet property="GTime" destination="uhh-K8-nok" id="fM4-ZH-oEX"/>
                         <outlet property="Input" destination="iBo-KJ-arr" id="Jvi-cX-YN4"/>
                         <outlet property="Result" destination="xLl-Yw-572" id="wkK-oa-JCm"/>
+                        <segue destination="pvi-CX-e7g" kind="push" identifier="Result" id="O2d-DE-W8A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,6 +213,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ob7-gX-umY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKA-ga-nVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
