@@ -305,8 +305,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wBZ-jx-YuS"/>
-        <segue reference="H2i-yW-T6Z"/>
         <segue reference="x8g-ve-9c3"/>
+        <segue reference="wBZ-jx-YuS"/>
+        <segue reference="N79-D5-GTO"/>
     </inferredMetricsTieBreakers>
 </document>

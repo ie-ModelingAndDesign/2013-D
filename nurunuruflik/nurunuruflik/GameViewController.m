@@ -190,6 +190,7 @@ NSTimer *timer;
             [timer invalidate];
             self.Result.hidden = NO;
             self.Result.text = @"Clear!";
+            [self performSegueWithIdentifier:@"Result" sender:nil];
         } else {
             // 次の文字列を表示する. counterは0からです.
             self.Example.text = sections[counter + 1];
