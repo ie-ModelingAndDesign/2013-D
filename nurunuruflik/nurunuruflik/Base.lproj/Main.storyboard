@@ -199,6 +199,24 @@
             </objects>
             <point key="canvasLocation" x="1573" y="65"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="NAJ-4y-jB0">
+            <objects>
+                <viewController id="pvi-CX-e7g" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a37-RQ-sMJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bx2-Bj-P09"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G45-gZ-WXg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EKA-ga-nVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="65"/>
+        </scene>
         <!--Howto View Controller-->
         <scene sceneID="YZi-Qe-abN">
             <objects>

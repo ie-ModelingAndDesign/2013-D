@@ -17,6 +17,7 @@
 		48AEF6E81864FCB70082466E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48AEF6E71864FCB70082466E /* Default-568h@2x.png */; };
 		695C79531850187900941C47 /* HowtoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C79521850187900941C47 /* HowtoViewController.m */; };
 		695C7997185021BF00941C47 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695C7996185021BF00941C47 /* GameViewController.m */; };
+		696369F31885365C004AF981 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696369F21885365C004AF981 /* ResultViewController.m */; };
 		696C40A618542E5B0018005B /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696C40A518542E5B0018005B /* DifficultyViewController.m */; };
 		699AFAB71883B9AF004AFFDE /* sections2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 699AFAB61883B9AF004AFFDE /* sections2.csv */; };
 		699AFAB91883B9ED004AFFDE /* sections3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 699AFAB81883B9ED004AFFDE /* sections3.csv */; };
@@ -63,6 +64,8 @@
 		695C79521850187900941C47 /* HowtoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowtoViewController.m; sourceTree = "<group>"; };
 		695C7995185021BF00941C47 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		695C7996185021BF00941C47 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		696369F11885365C004AF981 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		696369F21885365C004AF981 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		696C40A418542E5B0018005B /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
 		696C40A518542E5B0018005B /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
 		699AFAB61883B9AF004AFFDE /* sections2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections2.csv; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				696C40A518542E5B0018005B /* DifficultyViewController.m */,
 				695C7995185021BF00941C47 /* GameViewController.h */,
 				695C7996185021BF00941C47 /* GameViewController.m */,
+				696369F11885365C004AF981 /* ResultViewController.h */,
+				696369F21885365C004AF981 /* ResultViewController.m */,
 				485DD30618629E05005B55E9 /* QuizList */,
 				699BE99F184B0CF400AD0741 /* Images.xcassets */,
 				48AEF6DA1864F3720082466E /* Images */,
@@ -328,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695C7997185021BF00941C47 /* GameViewController.m in Sources */,
+				696369F31885365C004AF981 /* ResultViewController.m in Sources */,
 				699BE99E184B0CF400AD0741 /* ViewController.m in Sources */,
 				699BE998184B0CF400AD0741 /* AppDelegate.m in Sources */,
 				699BE994184B0CF400AD0741 /* main.m in Sources */,
