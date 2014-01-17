@@ -51,8 +51,6 @@ NSTimer *timer;
         [timer invalidate]; // タイマー停止
         self.GTime.text = @"0.00";
         start_date = 0.00;
-        self.Result.hidden = NO;
-        self.Result.text = @"タイムアップ";
         [self performSegueWithIdentifier:@"Result" sender:nil];
     }else if(start_date == 0.00){
         timer = nil;
@@ -93,11 +91,7 @@ NSTimer *timer;
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
     self.Result.hidden = YES;
     // タイマーの設定
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                             target:self
-                                           selector:@selector(onTimer:)
-                                           userInfo:nil
-                                            repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 }
 
 // GameViewController表示時
