@@ -8,6 +8,7 @@
 
 #import "DifficultyViewController.h"
 #import "GameViewController.h"
+#import "ResultViewController.h"
 
 @implementation DifficultyViewController
 
@@ -16,14 +17,20 @@
     if([[segue identifier] isEqualToString:@"easy"]){
         GameViewController *gameViewController = [segue destinationViewController];
         gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+        ResultViewController *resultV;
+        resultV.Rpoint=20;
     }
     if([[segue identifier] isEqualToString:@"normal"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];;
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];
+        ResultViewController *resultV;
+        resultV.Rpoint=30;
     }
     if([[segue identifier] isEqualToString:@"hard"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];;
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];
+        ResultViewController *resultV;
+        resultV.Rpoint=50;
     }
 
 }

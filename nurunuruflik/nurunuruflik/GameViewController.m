@@ -52,6 +52,8 @@ NSTimer *timer;
         self.GTime.text = @"0.00";
         start_date = 0.00;
         [self performSegueWithIdentifier:@"Result" sender:nil];
+        ResultViewController *RVC;
+        RVC.resultString = goodAnswers;
     }else if(start_date == 0.00){
         timer = nil;
         start_date = TIME;
@@ -185,6 +187,8 @@ NSTimer *timer;
             self.Result.hidden = NO;
             self.Result.text = @"Clear!";
             [self performSegueWithIdentifier:@"Result" sender:nil];
+            ResultViewController *RVC;
+            RVC.resultString = goodAnswers;
         } else {
             // 次の文字列を表示する. counterは0からです.
             self.Example.text = sections[counter + 1];
@@ -211,6 +215,7 @@ NSTimer *timer;
 //    }
 }
 
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -251,4 +256,6 @@ NSTimer *timer;
     }
 }
 
+
+    
 @end
