@@ -12,17 +12,19 @@
 // TIME .. タイマーの初期値
 #define TIME 60.00
 
-@interface GameViewController (){
+@interface GameViewController ()
+{
     NSMutableArray *sections; // csvFileから1行ずつ読み込んで配列にする.
     NSInteger counter; // sectionsの添字として使う.
+    
     NSInteger charNo; // 文字列用カウンター
-    char ch; // 一時保存用
-    NSString *str; // 一時保存用
-    NSString *markedText; // 確定前の文字
+    NSInteger strLength; // 一時保存用
+    char ch; // 1文字保存用
+    NSMutableString *text; // statementLabel文字追加用
 }
 
 // 文字が入力されると実行するメソッド
-- (IBAction)checkCompare:(id)sender;
+- (IBAction)editingChanged:(id)sender;
 // csvファイルを読み込んで, クイズリストを作るメソッド.
 - (void)fileLoadAndMakeQuizList;
 
@@ -77,17 +79,17 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    // show keyboard
+    [self.Input becomeFirstResponder];
+    self.Input.delegate = self;
     
-    // counter, chを0で初期化します.
     counter = 0; ch = 0;
     NSLog(@"charNo=%d", charNo);
     
-    // キーボードをデフォルト表示します.
-    [self.Input becomeFirstResponder];
-    
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
-    // chに1文字目を保存
+    // 文字列の長さを取得し, chに1文字目を保存
+    strLength = self.Example.text.length;
     ch = [self.Example.text characterAtIndex:charNo];
     
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
@@ -167,7 +169,6 @@ NSTimer *timer;
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-
 - (IBAction)Start:(id)sender {
     self.Result.hidden = YES;
     if (timeflg == FALSE){
@@ -175,46 +176,76 @@ NSTimer *timer;
     }
 }
 
-// 入力した文字を常にチェックするメソッド. 1文字でも入力されたら実行されます.
-- (IBAction)checkCompare:(id)sender{
-    // markedText = [self.Input textInRange:self.Input.markedTextRange];
-    // NSLog(@"markedText = %@", markedText);
-    // 文字列が正解だったら
-    if ([self.Example.text isEqualToString:self.Input.text]) {
-        goodAnswers++; // 正解数を1増やします.
-        charNo = 0; // charNoを戻す
-        NSLog(@"charNo初期化, goodAnswers=%d", goodAnswers);
-        
-        if (sections.count <= counter+1) {
-            self.Input.enabled = NO; // because not endless
-            [timer invalidate];
-            self.Result.hidden = NO;
-            self.Result.text = @"Clear!";
-            [self performSegueWithIdentifier:@"Result" sender:nil];
+// 文字列で比較ではなく、一文字ずつチェックして最後まできたら１問正解としたらどうか？
+- (BOOL)textField:(UITextField *)Input shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)inputText
+{
+    NSLog(@"inputText=%@", inputText);
+    if (inputText.length == 0) {
+        NSLog(@"backspace");
+        return YES;
+    } else if (self.Input.text.length == 0 && [inputText characterAtIndex:0] == [self.Example.text characterAtIndex:charNo]) {
+        // 1文字正解なら文字を確定する
+        text = [_statementLabel.text mutableCopy];
+        [text appendString:inputText];
+        _statementLabel.text = text;
+        // 最後の文字ならば
+        if (charNo+1 == strLength) {
+            // 最後の問題かをチェック
+            if (sections.count <= counter+1) {
+                [self performSegueWithIdentifier:@"Result" sender:nil];
+            } else {
+                // 次の文字列を表示する. counterは0からです.
+                self.Example.text = sections[counter+1];
+                counter++;
+                charNo = 0;
+                NSLog(@"charNo=%d",charNo);
+                strLength = self.Example.text.length;
+                ch = [self.Example.text characterAtIndex:charNo];
+                _statementLabel.text = @""; // reset statementLabel
+            }
         } else {
-            // 次の文字列を表示する. counterは0からです.
-            self.Example.text = sections[counter + 1];
-            counter++;
-            ch = [self.Example.text characterAtIndex:charNo]; // 次の1文字を保存
+            // 次の文字を保存
+            charNo++;
+            ch = [self.Example.text characterAtIndex:charNo];
+            NSLog(@"charNo=%d",charNo);
         }
-        
-        // 文字列をクリア
-        [self.Input resignFirstResponder];
-        self.Input.text = @"";
-        [self.Input becomeFirstResponder];
-        
+        return NO;
+	}
+    return YES;
+}
+
+// return YES
+- (IBAction)editingChanged:(id)sender {
+    NSLog(@"editingChanged");
+    // 小文字,濁点,半濁点の判定
+    if (self.Input.text.length != 0) {
+        if (self.Input.text.length == 1 && [self.Input.text characterAtIndex:0] == [self.Example.text characterAtIndex:charNo]) {
+            text = [_statementLabel.text mutableCopy];
+            [text appendString:self.Input.text];
+            _statementLabel.text = text;
+            if (charNo+1 == strLength) {
+                if (sections.count <= counter+1) {
+                    [self performSegueWithIdentifier:@"Result" sender:nil];
+                } else {
+                    self.Example.text = sections[counter+1];
+                    counter++;
+                    charNo = 0;
+                    NSLog(@"CharNo=%d",charNo);
+                    strLength = self.Example.text.length;
+                    ch = [self.Example.text characterAtIndex:charNo];
+                    _statementLabel.text = @""; // reset statementLabel
+                }
+            } else {
+                charNo++;
+                ch = [self.Example.text characterAtIndex:charNo];
+                NSLog(@"CharNo=%d", charNo);
+            }
+            // 文字列をクリア
+            [self.Input resignFirstResponder];
+            self.Input.text = @"";
+            [self.Input becomeFirstResponder];
+        }
     }
-//    else if (charNo < self.Example.text.length -1 && markedText.length != 0){
-//        if ([self.Input.text characterAtIndex:charNo] == [self.Example.text characterAtIndex:charNo]) {
-//            // 1文字正解していたら, 1文字確定
-//            [self.Input resignFirstResponder];
-//            [self.Input becomeFirstResponder];
-//            // 次の文字を保存
-//            charNo++;
-//            ch = [self.Example.text characterAtIndex:charNo];
-//            NSLog(@"charNo=%d", charNo);
-//        }
-//    }
 }
 
 - (void)didReceiveMemoryWarning

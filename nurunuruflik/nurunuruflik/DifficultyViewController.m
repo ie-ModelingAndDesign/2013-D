@@ -15,7 +15,7 @@
     
     if([[segue identifier] isEqualToString:@"easy"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"csv"];
     }
     if([[segue identifier] isEqualToString:@"normal"]){
         GameViewController *gameViewController = [segue destinationViewController];
