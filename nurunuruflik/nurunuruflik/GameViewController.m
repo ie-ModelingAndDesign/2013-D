@@ -37,34 +37,14 @@
 @synthesize Example;
 @synthesize Input;
 @synthesize csvFile;
+@synthesize goodAnswers;
+@synthesize Rpoint;
 
 // start_date .. タイマーの値
 float start_date;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
-
-- (void)onTimer:(NSTimer*)timer {
-    if(timeflg == TRUE && start_date > 0.00){
-        start_date -= 0.01;
-        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
-    }else if(start_date < 0.00){
-        timeflg = FALSE;
-        [timer invalidate]; // タイマー停止
-        self.GTime.text = @"0.00";
-        start_date = 0.00;
-        self.Result.hidden = NO;
-        self.Result.text = @"タイムアップ";
-        [self performSegueWithIdentifier:@"Result" sender:nil];
-    }else if(start_date == 0.00){
-        timer = nil;
-        start_date = TIME;
-    }else if(start_date <= TIME && start_date > 0.00){
-        timer = nil;
-        start_date = TIME;
-        self.Input.text = NULL;
-    }
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,11 +75,7 @@ NSTimer *timer;
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
     self.Result.hidden = YES;
     // タイマーの設定
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                             target:self
-                                           selector:@selector(onTimer:)
-                                           userInfo:nil
-                                            repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 }
 
 // GameViewController表示時
@@ -248,6 +224,31 @@ NSTimer *timer;
     }
 }
 
+- (void)onTimer:(NSTimer*)timer {
+    if(timeflg == TRUE && start_date > 0.00){
+        start_date -= 0.01;
+        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
+    }else if(start_date < 0.00){
+        timeflg = FALSE;
+        [timer invalidate]; // タイマー停止
+        self.GTime.text = @"0.00";
+        start_date = 0.00;
+        ResultViewController *RVC;
+        goodAnswers = *goodAnswers * *Rpoint;
+        RVC.resultString = goodAnswers;
+        [self performSegueWithIdentifier:@"Result" sender:nil];
+    }else if(start_date == 0.00){
+        timer = nil;
+        start_date = TIME;
+    }else if(start_date <= TIME && start_date > 0.00){
+        timer = nil;
+        start_date = TIME;
+        self.Input.text = NULL;
+    }
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -288,4 +289,6 @@ NSTimer *timer;
     }
 }
 
+
+    
 @end

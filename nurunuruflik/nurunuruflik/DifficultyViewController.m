@@ -11,6 +11,10 @@
 
 @implementation DifficultyViewController
 
+NSInteger easypoint=20;
+NSInteger normalpoint=30;
+NSInteger hardpoint=50;
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if([[segue identifier] isEqualToString:@"easy"]){
@@ -19,11 +23,13 @@
     }
     if([[segue identifier] isEqualToString:@"normal"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];;
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];
+        gameViewController.Rpoint = &(normalpoint);
     }
     if([[segue identifier] isEqualToString:@"hard"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];;
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];
+        gameViewController.Rpoint = &(hardpoint);
     }
 
 }

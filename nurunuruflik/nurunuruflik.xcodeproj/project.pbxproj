@@ -64,6 +64,7 @@
 		696369F21885365C004AF981 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		696C40A418542E5B0018005B /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
 		696C40A518542E5B0018005B /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
+		697618751890119E00453684 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		699AFAB61883B9AF004AFFDE /* sections2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections2.csv; sourceTree = "<group>"; };
 		699AFAB81883B9ED004AFFDE /* sections3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections3.csv; sourceTree = "<group>"; };
 		699BE984184B0CF400AD0741 /* nurunuruflik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nurunuruflik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,6 +379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A0D72708188F9D720076294D /* en */,
+				697618751890119E00453684 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

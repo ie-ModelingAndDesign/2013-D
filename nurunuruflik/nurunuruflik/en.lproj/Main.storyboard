@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quD-Ik-bmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="65"/>
+            <point key="canvasLocation" x="1596" y="65"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="NAJ-4y-jB0">
@@ -242,7 +242,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na1-AR-4ZJ">
-                                <rect key="frame" x="31" y="183" width="223" height="68"/>
+                                <rect key="frame" x="49" y="206" width="223" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="67"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -252,6 +252,9 @@
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ob7-gX-umY"/>
+                    <connections>
+                        <outlet property="result_label" destination="Na1-AR-4ZJ" id="ogG-F5-YpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKA-ga-nVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,10 @@
 
 @implementation ResultViewController
 
+@synthesize result_label;
+@synthesize resultString;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +31,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    NSLog(@"ポイントは%ld",(long)resultString);
+    
+    self.result_label.text = [[NSString alloc] initWithFormat:@"%ld!", (long)resultString];
 }
 
 - (void)didReceiveMemoryWarning
