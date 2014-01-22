@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultViewController : UIViewController{
-    int resultString;
-    int Rpoint;
-}
+@interface ResultViewController : UIViewController
 
-@property NSInteger *resultString;
-@property NSInteger *Rpoint;
+@property int *resultString;
 @property (weak, nonatomic) IBOutlet UILabel *result_label;
 
 @end

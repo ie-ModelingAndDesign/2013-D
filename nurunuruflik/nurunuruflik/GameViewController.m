@@ -35,34 +35,14 @@
 @synthesize Example;
 @synthesize Input;
 @synthesize csvFile;
+@synthesize goodAnswers;
+@synthesize Rpoint;
 
 // start_date .. タイマーの値
 float start_date;
 BOOL timeflg=FALSE;
 
 NSTimer *timer;
-
-- (void)onTimer:(NSTimer*)timer {
-    if(timeflg == TRUE && start_date > 0.00){
-        start_date -= 0.01;
-        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
-    }else if(start_date < 0.00){
-        timeflg = FALSE;
-        [timer invalidate]; // タイマー停止
-        self.GTime.text = @"0.00";
-        start_date = 0.00;
-        [self performSegueWithIdentifier:@"Result" sender:nil];
-        ResultViewController *RVC;
-        RVC.resultString = goodAnswers;
-    }else if(start_date == 0.00){
-        timer = nil;
-        start_date = TIME;
-    }else if(start_date <= TIME && start_date > 0.00){
-        timer = nil;
-        start_date = TIME;
-        self.Input.text = NULL;
-    }
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -179,16 +159,17 @@ NSTimer *timer;
     if ([self.Example.text isEqualToString:self.Input.text]) {
         goodAnswers++; // 正解数を1増やします.
         charNo = 0; // charNoを戻す
-        NSLog(@"charNo初期化, goodAnswers=%d", goodAnswers);
+        NSLog(@"charNo初期化, goodAnswers=%ld", (long)goodAnswers);
+        NSLog(@"Rpoint is %ld", (long)Rpoint);
         
         if (sections.count <= counter+1) {
             self.Input.enabled = NO; // because not endless
             [timer invalidate];
             self.Result.hidden = NO;
-            self.Result.text = @"Clear!";
-            [self performSegueWithIdentifier:@"Result" sender:nil];
             ResultViewController *RVC;
+            goodAnswers = *goodAnswers * *Rpoint;
             RVC.resultString = goodAnswers;
+            [self performSegueWithIdentifier:@"Result" sender:nil];
         } else {
             // 次の文字列を表示する. counterは0からです.
             self.Example.text = sections[counter + 1];
@@ -202,20 +183,33 @@ NSTimer *timer;
         [self.Input becomeFirstResponder];
         
     }
-//    else if (charNo < self.Example.text.length -1 && markedText.length != 0){
-//        if ([self.Input.text characterAtIndex:charNo] == [self.Example.text characterAtIndex:charNo]) {
-//            // 1文字正解していたら, 1文字確定
-//            [self.Input resignFirstResponder];
-//            [self.Input becomeFirstResponder];
-//            // 次の文字を保存
-//            charNo++;
-//            ch = [self.Example.text characterAtIndex:charNo];
-//            NSLog(@"charNo=%d", charNo);
-//        }
-//    }
 }
 
-    
+- (void)onTimer:(NSTimer*)timer {
+    if(timeflg == TRUE && start_date > 0.00){
+        start_date -= 0.01;
+        self.GTime.text = [NSString stringWithFormat:@"%.2f",start_date];
+    }else if(start_date < 0.00){
+        timeflg = FALSE;
+        [timer invalidate]; // タイマー停止
+        self.GTime.text = @"0.00";
+        start_date = 0.00;
+        ResultViewController *RVC;
+        goodAnswers = *goodAnswers * *Rpoint;
+        RVC.resultString = goodAnswers;
+        [self performSegueWithIdentifier:@"Result" sender:nil];
+    }else if(start_date == 0.00){
+        timer = nil;
+        start_date = TIME;
+    }else if(start_date <= TIME && start_date > 0.00){
+        timer = nil;
+        start_date = TIME;
+        self.Input.text = NULL;
+    }
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -15,6 +15,7 @@
 @implementation ResultViewController
 
 @synthesize result_label;
+@synthesize resultString;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,11 +32,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    resultString= resultString * Rpoint;
     
-    NSLog(@"%d",resultString);
+    NSLog(@"ポイントは%ld",(long)resultString);
     
-    self.result_label.text= [[NSNumber numberWithUnsignedInt:resultString] stringValue];
+    self.result_label.text = [[NSString alloc] initWithFormat:@"%ld!", (long)resultString];
 }
 
 - (void)didReceiveMemoryWarning
