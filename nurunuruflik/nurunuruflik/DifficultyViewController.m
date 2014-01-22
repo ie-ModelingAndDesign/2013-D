@@ -19,17 +19,18 @@ NSInteger hardpoint=50;
     
     if([[segue identifier] isEqualToString:@"easy"]){
         GameViewController *gameViewController = [segue destinationViewController];
-        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"csv"];
+        gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+        gameViewController.Rpoint = easypoint;
     }
     if([[segue identifier] isEqualToString:@"normal"]){
         GameViewController *gameViewController = [segue destinationViewController];
         gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections2" ofType:@"csv"];
-        gameViewController.Rpoint = &(normalpoint);
+        gameViewController.Rpoint = normalpoint;
     }
     if([[segue identifier] isEqualToString:@"hard"]){
         GameViewController *gameViewController = [segue destinationViewController];
         gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections3" ofType:@"csv"];
-        gameViewController.Rpoint = &(hardpoint);
+        gameViewController.Rpoint = hardpoint;
     }
 
 }

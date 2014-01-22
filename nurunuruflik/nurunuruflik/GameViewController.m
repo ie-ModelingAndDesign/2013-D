@@ -63,7 +63,7 @@ NSTimer *timer;
     [self.Input becomeFirstResponder];
     self.Input.delegate = self;
     
-    counter = 0; ch = 0;
+    counter = 0; ch = 0; goodAnswers = 0;
     NSLog(@"charNo=%d", charNo);
     
     // クイズリストを作成して, 1問目を表示します.
@@ -73,7 +73,6 @@ NSTimer *timer;
     ch = [self.Example.text characterAtIndex:charNo];
     
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
-    self.Result.hidden = YES;
     // タイマーの設定
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 }
@@ -173,6 +172,8 @@ NSTimer *timer;
                 // 次の文字列を表示する. counterは0からです.
                 self.Example.text = sections[counter+1];
                 counter++;
+                goodAnswers++;
+                self.answerPoint.text = [[NSString alloc]initWithFormat:@"%d",goodAnswers];
                 charNo = 0;
                 NSLog(@"charNo=%d",charNo);
                 strLength = self.Example.text.length;
@@ -205,6 +206,8 @@ NSTimer *timer;
                 } else {
                     self.Example.text = sections[counter+1];
                     counter++;
+                    goodAnswers++;
+                    self.answerPoint.text = [[NSString alloc]initWithFormat:@"%d",goodAnswers];
                     charNo = 0;
                     NSLog(@"CharNo=%d",charNo);
                     strLength = self.Example.text.length;
@@ -234,8 +237,8 @@ NSTimer *timer;
         self.GTime.text = @"0.00";
         start_date = 0.00;
         ResultViewController *RVC;
-        goodAnswers = *goodAnswers * *Rpoint;
-        RVC.resultString = goodAnswers;
+        goodAnswers = goodAnswers * Rpoint;
+        RVC.resultString = &(goodAnswers);
         [self performSegueWithIdentifier:@"Result" sender:nil];
     }else if(start_date == 0.00){
         timer = nil;
