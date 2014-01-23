@@ -10,4 +10,7 @@
 
 @interface ResultViewController : UIViewController
 
+@property int *resultString;
+@property (weak, nonatomic) IBOutlet UILabel *result_label;
+
 @end

@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *Input;
 @property (weak, nonatomic) IBOutlet UILabel *statementLabel;
 @property NSString *csvFile;
+@property NSInteger goodAnswers;
+@property NSInteger Rpoint;
 
 - (IBAction)Start:(id)sender;
 -(void)onTimer:(NSTimer*)timer;

@@ -77,6 +77,9 @@ NSTimer *timer;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    // show keyboard
+    [self.Input becomeFirstResponder];
+    self.Input.delegate = self;
     
     // counter, charNoを0で初期化します.
     counter = 0; charNo = 0; goodAnswers = 0;
@@ -88,16 +91,13 @@ NSTimer *timer;
     
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
-    // chに1文字目を保存
+    // 文字列の長さを取得し, chに1文字目を保存
+    strLength = self.Example.text.length;
     ch = [self.Example.text characterAtIndex:charNo];
     
     self.GTime.text = [NSString stringWithFormat:@"%.2f",TIME];
     // タイマーの設定
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                             target:self
-                                           selector:@selector(onTimer:)
-                                           userInfo:nil
-                                            repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 }
 
 // GameViewController表示時
@@ -289,4 +289,6 @@ NSTimer *timer;
     }
 }
 
+
+    
 @end
