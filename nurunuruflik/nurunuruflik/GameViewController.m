@@ -122,8 +122,8 @@ NSTimer *timer;
 - (void)fileLoadAndMakeQuizList
 {
     // CSVファイルからセクションデータを取得する
-    csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
-    NSLog(@"Load csv");
+    //csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    //NSLog(@"Load csv");
     NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
     NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
     NSScanner *scanner = [NSScanner scannerWithString:csv];
@@ -178,9 +178,9 @@ NSTimer *timer;
 // 文字列で比較ではなく、一文字ずつチェックして最後まできたら１問正解としたらどうか？
 - (BOOL)textField:(UITextField *)Input shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)inputText
 {
-    NSLog(@"inputText=%@", inputText);
+    //NSLog(@"inputText=%@", inputText);
     if (inputText.length == 0) {
-        NSLog(@"backspace");
+        //NSLog(@"backspace");
         return YES;
     } else if (self.Input.text.length == 0 && [inputText characterAtIndex:0] == [self.Example.text characterAtIndex:charNo]) {
         // 1文字正解なら文字を確定する
@@ -200,7 +200,7 @@ NSTimer *timer;
                 point = [[NSString alloc] initWithFormat:@"%d",goodAnswers];
                 self.pointLabel.text = point;
                 charNo = 0;
-                NSLog(@"charNo=%d",charNo);
+                //NSLog(@"charNo=%d",charNo);
                 strLength = self.Example.text.length;
                 ch = [self.Example.text characterAtIndex:charNo];
                 self.statementLabel.text = @""; // reset statementLabel
@@ -209,7 +209,7 @@ NSTimer *timer;
             // 次の文字を保存
             charNo++;
             ch = [self.Example.text characterAtIndex:charNo];
-            NSLog(@"charNo=%d",charNo);
+            //NSLog(@"charNo=%d",charNo);
         }
         return NO;
     }
@@ -219,7 +219,7 @@ NSTimer *timer;
 // return YES
 - (IBAction)editingChanged:(id)sender
 {
-    NSLog(@"editingChanged");
+    //NSLog(@"editingChanged");
     // 小文字,濁点,半濁点の判定
     if (self.Input.text.length != 0) {
         if (self.Input.text.length == 1 && [self.Input.text characterAtIndex:0] == [self.Example.text characterAtIndex:charNo]) {
@@ -236,7 +236,7 @@ NSTimer *timer;
                     point = [[NSString alloc] initWithFormat:@"%d",goodAnswers];
                     self.pointLabel.text = point;
                     charNo = 0;
-                    NSLog(@"CharNo=%d",charNo);
+                    //NSLog(@"CharNo=%d",charNo);
                     strLength = self.Example.text.length;
                     ch = [self.Example.text characterAtIndex:charNo];
                     self.statementLabel.text = @""; // reset statementLabel
@@ -244,7 +244,7 @@ NSTimer *timer;
             } else {
                 charNo++;
                 ch = [self.Example.text characterAtIndex:charNo];
-                NSLog(@"CharNo=%d", charNo);
+                //NSLog(@"CharNo=%d", charNo);
             }
             // 文字列をクリア
             [self.Input resignFirstResponder];
