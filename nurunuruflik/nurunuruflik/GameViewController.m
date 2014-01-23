@@ -9,7 +9,7 @@
 #import "GameViewController.h"
 #import "ResultViewController.h"
 
-// TIME .. タイマーの初期値
+// タイマーの初期値
 #define TIME 60.00
 
 @interface GameViewController ()
@@ -37,6 +37,7 @@
 @synthesize Input;
 @synthesize csvFile;
 @synthesize statementLabel;
+@synthesize goodAnswers;
 
 // start_date .. タイマーの値
 float start_date;
@@ -118,7 +119,8 @@ NSTimer *timer;
 - (void)fileLoadAndMakeQuizList
 {
     // CSVファイルからセクションデータを取得する
-    //csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
+    NSLog(@"Load csv");
     NSData *csvData = [NSData dataWithContentsOfFile:csvFile];
     NSString *csv = [[NSString alloc] initWithData:csvData encoding:NSUTF8StringEncoding];
     NSScanner *scanner = [NSScanner scannerWithString:csv];

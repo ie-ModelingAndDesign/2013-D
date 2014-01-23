@@ -16,7 +16,7 @@ NSInteger normalpoint=30;
 NSInteger hardpoint=50;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+
     if([[segue identifier] isEqualToString:@"easy"]){
         GameViewController *gameViewController = [segue destinationViewController];
         gameViewController.csvFile = [[NSBundle mainBundle] pathForResource:@"sections" ofType:@"csv"];
