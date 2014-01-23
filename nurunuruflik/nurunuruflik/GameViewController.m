@@ -21,6 +21,8 @@
     NSInteger strLength; // 回避用
     char ch; // 1文字保存用
     NSMutableString *text; // statementLabel回避用
+    
+    NSString *point; // 得点
 }
 
 // 文字が入力されると実行するメソッド
@@ -37,6 +39,7 @@
 @synthesize Input;
 @synthesize csvFile;
 @synthesize statementLabel;
+@synthesize pointLabel;
 @synthesize goodAnswers;
 
 // start_date .. タイマーの値
@@ -194,7 +197,8 @@ NSTimer *timer;
                 self.Example.text = sections[counter+1];
                 counter++;
                 goodAnswers++;
-                //self.answerPoint.text = [[NSString alloc]initWithFormat:@"%d",goodAnswers];
+                point = [[NSString alloc] initWithFormat:@"%d",goodAnswers];
+                self.pointLabel.text = point;
                 charNo = 0;
                 NSLog(@"charNo=%d",charNo);
                 strLength = self.Example.text.length;
@@ -229,8 +233,8 @@ NSTimer *timer;
                     self.Example.text = sections[counter+1];
                     counter++;
                     goodAnswers++;
-                    //point = [[NSString alloc] initWithFormat:@"%d",goodAnswers];
-                    //self.answerPoint.text = point;
+                    point = [[NSString alloc] initWithFormat:@"%d",goodAnswers];
+                    self.pointLabel.text = point;
                     charNo = 0;
                     NSLog(@"CharNo=%d",charNo);
                     strLength = self.Example.text.length;

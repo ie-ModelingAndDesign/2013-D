@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *Example;
 @property (weak, nonatomic) IBOutlet UITextField *Input;
 @property (weak, nonatomic) IBOutlet UILabel *statementLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointLabel;
 @property NSString *csvFile;
 @property NSInteger goodAnswers;
 @property NSInteger Rpoint;
