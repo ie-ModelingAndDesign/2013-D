@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController <UIAlertViewDelegate>
+@interface GameViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 {
     NSInteger goodAnswers; // 正解数
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *GTime;
-@property (weak, nonatomic) IBOutlet UILabel *Result;
 @property (weak, nonatomic) IBOutlet UILabel *Example;
 @property (weak, nonatomic) IBOutlet UITextField *Input;
+@property (weak, nonatomic) IBOutlet UILabel *statementLabel;
 @property NSString *csvFile;
 
 - (IBAction)Start:(id)sender;

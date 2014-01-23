@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 // UIAlertViewクラスのデリゲートプロトコルUIAlertViewDelegateを採用する
-@interface GameViewController : UIViewController <UIAlertViewDelegate>
+@interface GameViewController : UIViewController <UITextFieldDelegate>
 
 @end

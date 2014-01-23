@@ -10,21 +10,22 @@
 
 @interface GameViewController ()
 {
-    // インスタンス変数宣言
-    // sections .. csvFileから1行ずつ読み込んで配列にする.
-    NSMutableArray *sections;
-    // counter .. sectionsの添字として使う.
-    NSInteger counter;
+    NSMutableArray *sections; // sections .. csvFileから1行ずつ読み込んで配列にする.
+    NSInteger counter; // sectionsの添字として使う.
+    
+    NSInteger charNo; // 文字列用カウンター
+    NSInteger strLength; // 回避用
+    char ch; // 1文字保存用
+    NSMutableString *text; // statementLabel回避用
 }
 // 問題を表示するテキストフィールド
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 // 文字を入力するテキストフィールド
-@property (weak, nonatomic) IBOutlet UITextField *inputText;
+@property (weak, nonatomic) IBOutlet UITextField *inputField;
 // 入力の状態を常に表示させておくテキストフィールド
 @property (weak, nonatomic) IBOutlet UILabel *statementLabel;
 
-// 文字が入力されると実行するメソッド
-- (IBAction)checkCompare:(id)sender;
+- (IBAction)editingChanged:(id)sender;
 
 // csvファイルを読み込んで, クイズリストを作るメソッド.
 - (void)fileLoadAndMakeQuizList;
@@ -38,12 +39,14 @@
     
     // クイズリストを作成して, 1問目を表示します.
     [self fileLoadAndMakeQuizList];
+    strLength = _textLabel.text.length;
 
     //キーボードをデフォルト表示します.
-    [_inputText becomeFirstResponder];
+    [_inputField becomeFirstResponder];
+    _inputField.delegate = self;
     
-    // counterを1で初期化します.
-    counter = 1;
+    // counter, charNoを0で初期化します.
+    counter = 0; charNo = 0;
 }
 
 // csvファイルを読み込んで, クイズリストを作るメソッド
@@ -84,20 +87,78 @@
     _textLabel.text = sections[0];
 }
 
-// 常にチェックするメソッド
-- (IBAction)checkCompare:(id)sender{
-    // 問題の文字と入力した文字を比較します
-    if ([_textLabel.text isEqualToString:_inputText.text]) {
-        // 正解していた場合に, counterがsectionsの要素数を超えていたら, 終了です.
-        if (counter >= sections.count) {
-            _statementLabel.text = @"終了！";
-            _inputText.enabled = NO; // 入力不可になります
+// 文字列で比較ではなく、一文字ずつチェックして最後まできたら１問正解としたらどうか？
+- (BOOL)textField:(UITextField *)inputField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)inputText
+{
+    NSLog(@"inputText=%@", inputText);
+    if (inputText.length == 0) {
+        NSLog(@"backspace");
+        return YES;
+    } else if (_inputField.text.length == 0 && [inputText characterAtIndex:0] == [_textLabel.text characterAtIndex:charNo]) {
+        // 1文字正解なら文字を確定する
+        text = [self.statementLabel.text mutableCopy];
+        [text appendString:inputText];
+        self.statementLabel.text = text;
+        // 最後の文字ならば
+        if (charNo+1 == strLength) {
+            // 最後の問題かをチェック
+            if (sections.count <= counter+1) {
+                _inputField.enabled = NO;
+                _textLabel.text = @"Clear!";
+            } else {
+                // 次の文字列を表示する. counterは0からです.
+                _textLabel.text = sections[counter+1];
+                counter++;
+                charNo = 0;
+                NSLog(@"charNo=%d",charNo);
+                strLength = _textLabel.text.length;
+                ch = [_textLabel.text characterAtIndex:charNo];
+                self.statementLabel.text = @""; // reset statementLabel
+            }
         } else {
-            _textLabel.text = sections[counter]; // counterは1からです.
-            counter++;
+            // 次の文字を保存
+            charNo++;
+            ch = [_textLabel.text characterAtIndex:charNo];
+            NSLog(@"charNo=%d",charNo);
         }
-    } else {
-        _statementLabel.text = @"続けて入力しよう";
+        return NO;
+    }
+    return YES;
+}
+
+// return YES
+- (IBAction)editingChanged:(id)sender
+{
+    NSLog(@"editingChanged");
+    // 小文字,濁点,半濁点の判定
+    if (_inputField.text.length != 0) {
+        if (_inputField.text.length == 1 && [_inputField.text characterAtIndex:0] == [_textLabel.text characterAtIndex:charNo]) {
+            text = [_statementLabel.text mutableCopy];
+            [text appendString:_inputField.text];
+            self.statementLabel.text = text;
+            if (charNo+1 == strLength) {
+                if (sections.count <= counter+1) {
+                    _inputField.enabled = NO;
+                    _textLabel.text = @"Clear!";
+                } else {
+                    _textLabel.text = sections[counter+1];
+                    counter++;
+                    charNo = 0;
+                    NSLog(@"CharNo=%d",charNo);
+                    strLength = _textLabel.text.length;
+                    ch = [_textLabel.text characterAtIndex:charNo];
+                    self.statementLabel.text = @""; // reset statementLabel
+                }
+            } else {
+                charNo++;
+                ch = [_textLabel.text characterAtIndex:charNo];
+                NSLog(@"CharNo=%d", charNo);
+            }
+            // 文字列をクリア
+            [_inputField resignFirstResponder];
+            _inputField.text = @"";
+            [_inputField becomeFirstResponder];
+        }
     }
 }
 
@@ -106,5 +167,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
