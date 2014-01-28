@@ -10,7 +10,7 @@
 #import "ResultViewController.h"
 
 // タイマーの初期値
-#define TIME 10.00
+#define TIME 60.00
 
 @interface GameViewController ()
 {
