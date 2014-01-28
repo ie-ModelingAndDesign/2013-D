@@ -33,9 +33,9 @@
 	// Do any additional setup after loading the view.
     
     
-    NSLog(@"ポイントは%ld",(long)resultString);
+    NSLog(@"ポイントは%d",resultString);
     
-    self.result_label.text = [[NSString alloc] initWithFormat:@"%ld!", (long)resultString];
+    self.result_label.text = [[NSString alloc] initWithFormat:@"%d!", resultString];
 }
 
 - (void)didReceiveMemoryWarning

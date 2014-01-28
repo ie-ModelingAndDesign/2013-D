@@ -10,7 +10,7 @@
 #import "ResultViewController.h"
 
 // タイマーの初期値
-#define TIME 60.00
+#define TIME 10.00
 
 @interface GameViewController ()
 {
@@ -41,6 +41,7 @@
 @synthesize statementLabel;
 @synthesize pointLabel;
 @synthesize goodAnswers;
+@synthesize Rpoint;
 
 // start_date .. タイマーの値
 float start_date;
@@ -57,6 +58,7 @@ NSTimer *timer;
         [timer invalidate]; // タイマー停止
         self.GTime.text = @"0.00";
         start_date = 0.00;
+        NSLog(@"%d",goodAnswers);
         [self performSegueWithIdentifier:@"Result" sender:nil];
     }else if(start_date == 0.00){
         timer = nil;
@@ -66,6 +68,18 @@ NSTimer *timer;
         start_date = TIME;
         self.Input.text = NULL;
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    goodAnswers=goodAnswers*Rpoint;
+    
+    if([[segue identifier] isEqualToString:@"Result"]){
+        ResultViewController *RVC = [segue destinationViewController];
+        RVC.resultString = goodAnswers;
+        NSLog(@"load");
+    }
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

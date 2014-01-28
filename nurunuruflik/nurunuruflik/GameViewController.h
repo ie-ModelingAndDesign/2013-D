@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointLabel;
 @property NSString *csvFile;
 @property NSInteger goodAnswers;
-@property NSInteger Rpoint;
+@property int Rpoint;
 
 - (IBAction)Start:(id)sender;
 -(void)onTimer:(NSTimer*)timer;

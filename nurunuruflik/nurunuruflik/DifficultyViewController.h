@@ -10,4 +10,8 @@
 
 @interface DifficultyViewController : UIViewController
 
+@property int easypoint;
+@property int normalpoint;
+@property int hardpoint;
+
 @end
