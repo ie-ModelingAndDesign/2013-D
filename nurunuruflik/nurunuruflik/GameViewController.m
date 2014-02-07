@@ -226,7 +226,7 @@ NSTimer *timer;
                 ch = [self.Example.text characterAtIndex:charNo];
                 self.statementLabel.text = @""; // reset statementLabel
             }
-        } else {
+        }else {
             // 次の文字を保存
             charNo++;
             ch = [self.Example.text characterAtIndex:charNo];
@@ -262,7 +262,7 @@ NSTimer *timer;
                     ch = [self.Example.text characterAtIndex:charNo];
                     self.statementLabel.text = @""; // reset statementLabel
                 }
-            } else {
+            }else {
                 charNo++;
                 ch = [self.Example.text characterAtIndex:charNo];
                 //NSLog(@"CharNo=%d", charNo);

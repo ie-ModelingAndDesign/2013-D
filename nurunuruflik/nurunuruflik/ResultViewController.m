@@ -21,6 +21,9 @@
 @synthesize normalvalue;
 @synthesize hardvalue;
 
+NSString *ganbari = @"よく頑張りました( ´∀｀)b!";
+NSString *zannen = @"残念!!もう一度頑張って(´；ω；｀)";
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,27 +43,27 @@
     NSLog(@"ポイントは%d",resultString);
     
     if (easyvalue == YES){
-        NSLog(@"yes");
+        NSLog(@"eyes");
         if (resultString >= 0 && resultString < 100){
-            NSLog(@"ok");
-            self.value.text = @"残念!!もう一度頑張って(´；ω；｀)";
+            NSLog(@"eng");
+            self.value.text = zannen;
         }else{
-            NSLog(@"ng");
-            self.value.text = @"よく頑張りました( ´∀｀)b!";
+            NSLog(@"eok");
+            self.value.text = ganbari;
         }
     }else if (normalvalue == YES){
-        NSLog(@"yes");
+        NSLog(@"nyes");
         if (resultString >= 0 && resultString < 150){
-            self.value.text = @"残念!!もう一度頑張って(´；ω；｀)";
+            self.value.text = zannen;
         }else{
-            self.value.text = @"よく頑張りました( ´∀｀)b!";
+            self.value.text = ganbari;
         }
     }else if (hardvalue == YES){
-        NSLog(@"yes");
+        NSLog(@"nyes");
         if (resultString >= 0 && resultString < 300){
-            self.value.text = @"残念!!もう一度頑張って(´；ω；｀)";
+            self.value.text = zannen;
         }else{
-            self.value.text = @"よく頑張りました( ´∀｀)b!";
+            self.value.text = ganbari;
         }
     }
     
