@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYG-6B-YaS">
-                                <rect key="frame" x="43" y="405" width="235" height="47"/>
+                                <rect key="frame" x="43" y="444" width="235" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="タイトル画面に戻る">
@@ -256,10 +256,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dq-U1-UX1">
-                                <rect key="frame" x="25" y="239" width="270" height="41"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLt-da-2Ef">
+                                <rect key="frame" x="20" y="288" width="280" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -269,7 +269,7 @@
                     <navigationItem key="navigationItem" id="Ob7-gX-umY"/>
                     <connections>
                         <outlet property="result_label" destination="Na1-AR-4ZJ" id="ogG-F5-YpE"/>
-                        <outlet property="value" destination="0Dq-U1-UX1" id="m8J-3a-MHo"/>
+                        <outlet property="vl" destination="MLt-da-2Ef" id="A4Y-Ho-tAB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKA-ga-nVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,7 +351,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="H2i-yW-T6Z"/>
-        <segue reference="X1T-sf-Ddg"/>
+        <segue reference="x8g-ve-9c3"/>
         <segue reference="wLp-dc-l68"/>
     </inferredMetricsTieBreakers>
 </document>

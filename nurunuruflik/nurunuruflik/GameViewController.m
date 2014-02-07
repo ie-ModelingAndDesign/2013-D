@@ -25,6 +25,8 @@
     NSString *point; // 得点
 }
 
+
+
 // 文字が入力されると実行するメソッド
 - (IBAction)editingChanged:(id)sender;
 // csvファイルを読み込んで, クイズリストを作るメソッド.
@@ -69,6 +71,13 @@ NSTimer *timer;
         self.Input.text = NULL;
     }
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    //縦画面のみ有効
+    return (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown || interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -185,10 +194,6 @@ NSTimer *timer;
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
 
 - (IBAction)Start:(id)sender {
     if (timeflg == FALSE){
@@ -282,6 +287,8 @@ NSTimer *timer;
     // Dispose of any resources that can be recreated.
 }
 
+
+
 // ボタンのタップで実行するメソッド
 - (IBAction)alertButton:(id)sender{
     // タイマーを止める
@@ -316,6 +323,4 @@ NSTimer *timer;
     }
 }
 
-
-    
 @end

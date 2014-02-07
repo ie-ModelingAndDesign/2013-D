@@ -15,7 +15,7 @@
 @implementation ResultViewController
 
 @synthesize result_label;
-@synthesize value;
+@synthesize vl;
 @synthesize resultString;
 @synthesize easyvalue;
 @synthesize normalvalue;
@@ -46,26 +46,27 @@ NSString *zannen = @"残念!!もう一度頑張って(´；ω；｀)";
         NSLog(@"eyes");
         if (resultString >= 0 && resultString < 100){
             NSLog(@"eng");
-            self.value.text = zannen;
+            vl.text = zannen;
         }else{
             NSLog(@"eok");
-            self.value.text = ganbari;
+            vl.text = ganbari;
         }
     }else if (normalvalue == YES){
         NSLog(@"nyes");
         if (resultString >= 0 && resultString < 150){
-            self.value.text = zannen;
+            vl.text = zannen;
         }else{
-            self.value.text = ganbari;
+            vl.text = ganbari;
         }
     }else if (hardvalue == YES){
         NSLog(@"nyes");
         if (resultString >= 0 && resultString < 300){
-            self.value.text = zannen;
+            vl.text = zannen;
         }else{
-            self.value.text = ganbari;
+            vl.text = ganbari;
         }
     }
+    //[self.view addSubview:vl];
     
     self.result_label.text = [[NSString alloc] initWithFormat:@"%d!", resultString];
 
@@ -76,5 +77,6 @@ NSString *zannen = @"残念!!もう一度頑張って(´；ω；｀)";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
