@@ -78,6 +78,13 @@ NSTimer *timer;
         ResultViewController *RVC = [segue destinationViewController];
         RVC.resultString = goodAnswers;
         NSLog(@"load");
+        if (Rpoint == 20){
+            RVC.easyvalue = YES;
+        }else if (Rpoint == 30){
+            RVC.normalvalue = YES;
+        }else if (Rpoint == 50){
+            RVC.hardvalue = YES;
+        }
     }
 
 }

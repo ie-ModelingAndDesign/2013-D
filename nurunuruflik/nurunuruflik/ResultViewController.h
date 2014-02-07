@@ -12,5 +12,9 @@
 
 @property int resultString;
 @property (weak, nonatomic) IBOutlet UILabel *result_label;
+@property (weak, nonatomic) IBOutlet UILabel *value;
+@property BOOL easyvalue;
+@property BOOL normalvalue;
+@property BOOL hardvalue;
 
 @end
