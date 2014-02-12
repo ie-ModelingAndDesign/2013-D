@@ -23,6 +23,8 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+ // _view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
 }
 
 - (void)didReceiveMemoryWarning
